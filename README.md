@@ -13,3 +13,21 @@ Key Capabilities
     Audit & Reporting: Generates exportable violation summaries (PDF/editable formats) backed by photographic evidence.
 
     Enforcement Dashboard: Role-based portal providing scan history, centralized product registries, and compliance analytics.
+
+
+## Tech Stack
+
+- Frontend: React + Tailwind CSS
+- Backend: Python + FastAPI
+- OCR: Tesseract / EasyOCR
+- Database: PostgreSQL
+
+## Project Structure
+
+```text
+SIH-Legal-Metrology/
+├── frontend/           # Upload flow, results, dashboard UI
+├── backend/            # API, rule engine, database integration
+├── ocr/                # Label image preprocessing and text extraction
+├── docs/               # Problem statement, rules reference, feature scope
+└── README.md
