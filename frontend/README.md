@@ -11,4 +11,4 @@ Owner: [Prashant Pandey]
 React (or team's choice) — update once decided.
 
 ## Status
-In progress— update as you go.
+In progress
