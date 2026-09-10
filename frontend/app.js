@@ -313,8 +313,11 @@ class LegalMetrologyPortalApp {
           const reader = new FileReader();
           reader.onload = e => {
             this.uploadedImagePreview = e.target.result;
+            this._updateDropzonePreview();
           };
           reader.readAsDataURL(f);
+        } else if (ext === '.pdf') {
+          this.uploadedImagePreview = null;
         }
         this.uploadedFiles.push(fileObj);
       }
@@ -329,6 +332,42 @@ class LegalMetrologyPortalApp {
       this._showAlert('error', `Rejected ${rejected.length} file(s): <strong>${rejected.join(', ')}</strong> — Accept ONLY: PDF, JPG, PNG.`);
     }
     this._renderFileList();
+    this._updateDropzonePreview();
+  }
+
+  /* ── Update In-Box Dropzone Photo / Document Preview ───────── */
+  _updateDropzonePreview() {
+    const defaultBox = document.getElementById('dropzone-default');
+    const previewBox = document.getElementById('dropzone-preview');
+    const imgElem    = document.getElementById('dropzone-img-elem');
+    const pdfBadge   = document.getElementById('dropzone-pdf-badge');
+    const nameElem   = document.getElementById('dropzone-preview-name');
+    const sizeElem   = document.getElementById('dropzone-preview-size');
+
+    if (!defaultBox || !previewBox) return;
+
+    if (this.uploadedFiles && this.uploadedFiles.length > 0) {
+      const file = this.uploadedFiles[0];
+      defaultBox.style.display = 'none';
+      previewBox.style.display = 'block';
+
+      if (nameElem) nameElem.textContent = file.name;
+      if (sizeElem) sizeElem.textContent = file.size || '1.4 MB';
+
+      if (file.ext === 'PDF') {
+        if (imgElem) imgElem.style.display = 'none';
+        if (pdfBadge) pdfBadge.style.display = 'flex';
+      } else {
+        if (pdfBadge) pdfBadge.style.display = 'none';
+        if (imgElem) {
+          imgElem.src = this.uploadedImagePreview || '';
+          imgElem.style.display = 'block';
+        }
+      }
+    } else {
+      defaultBox.style.display = 'block';
+      previewBox.style.display = 'none';
+    }
   }
 
   _fmtSize(bytes) {
@@ -358,8 +397,11 @@ class LegalMetrologyPortalApp {
         <button type="button" class="btn-remove" data-idx="${idx}" title="Remove file">&times;</button>`;
       li.querySelector('.btn-remove').addEventListener('click', e => {
         this.uploadedFiles.splice(+e.currentTarget.dataset.idx, 1);
-        if (!this.uploadedFiles.length) this.uploadedImagePreview = null;
+        if (!this.uploadedFiles.length) {
+          this.uploadedImagePreview = null;
+        }
         this._renderFileList();
+        this._updateDropzonePreview();
       });
       this.fileList.appendChild(li);
     });
@@ -386,6 +428,7 @@ class LegalMetrologyPortalApp {
     this.activeChecks  = s.ruleChecks;
     this._populateForm();
     this._renderFileList();
+    this._updateDropzonePreview();
     this.uploadAlert.style.display = 'none';
     this.goToStep(1);
   }
@@ -511,8 +554,10 @@ class LegalMetrologyPortalApp {
       this.btnDlPass.style.display  = 'inline-flex';
       this.failActionBar.style.display = 'none';
       this.violationsWrap.style.display= 'none';
-      // Full-width passed column
-      this.resultColumns.style.gridTemplateColumns = '1fr';
+      if (this.resultColumns) {
+        this.resultColumns.classList.remove('has-violations');
+        this.resultColumns.style.gridTemplateColumns = '';
+      }
     } else {
       this.resultBanner.className      = 'result-banner fail';
       this.resultIcon.textContent      = '✕';
@@ -521,14 +566,26 @@ class LegalMetrologyPortalApp {
       this.btnDlPass.style.display     = 'none';
       this.failActionBar.style.display = 'block';
       this.violationsWrap.style.display= 'block';
-      this.resultColumns.style.gridTemplateColumns = '1fr 1fr';
+      if (this.resultColumns) {
+        this.resultColumns.classList.add('has-violations');
+        this.resultColumns.style.gridTemplateColumns = '';
+      }
 
       this.violationsList.innerHTML = ev.violations.map(v => `
         <div class="violation-card">
-          <div class="v-rule-tag">${v.ruleNo} • ${v.penaltySection}</div>
+          <div class="v-card-top">
+            <span class="v-rule-tag">${v.ruleNo}</span>
+            <span class="v-penalty-tag">${v.penaltySection}</span>
+          </div>
           <div class="v-title">${v.title}</div>
-          <div class="v-detected">Detected: ${v.detectedText}</div>
-          <div class="v-legal">${v.reason}</div>
+          <div class="v-detected-box">
+            <span class="v-detected-label">Detected on Package:</span>
+            <span class="v-detected-val">${v.detectedText}</span>
+          </div>
+          <div class="v-legal">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <span>${v.reason}</span>
+          </div>
         </div>`).join('');
     }
 
@@ -567,6 +624,7 @@ class LegalMetrologyPortalApp {
     if (this.repStatus) {
       this.repStatus.textContent = ev.isPass ? 'PASS (COMPLIANT)' : 'FAIL (NON-COMPLIANT)';
       this.repStatus.style.color = ev.isPass ? '#166534' : '#991B1B';
+      this.repStatus.style.whiteSpace = 'nowrap';
     }
 
     // 1. Verdict Banner inside PDF
@@ -604,7 +662,13 @@ class LegalMetrologyPortalApp {
       }
     }
 
-    // 2. Evidence Label Image in PDF
+    // 2. Official Government Emblem in PDF (uses inlined base64 to avoid canvas tainting)
+    const repEmblem = document.getElementById('rep-govt-emblem');
+    if (repEmblem && window.EMBLEM_DATA_URI) {
+      repEmblem.src = window.EMBLEM_DATA_URI;
+    }
+
+    // 3. Evidence Label Image in PDF
     if (this.repEvidenceImg) {
       if (this.uploadedImagePreview) {
         this.repEvidenceImg.src = this.uploadedImagePreview;
@@ -706,16 +770,14 @@ class LegalMetrologyPortalApp {
         </svg> Generating PDF...`;
     }
 
-    // Save scroll position and scroll to top for clean html2canvas capture
-    const prevScrollY = window.scrollY;
-    window.scrollTo(0, 0);
+    reportElem.classList.add('pdf-copy-active');
+    setTimeout(() => reportElem.classList.remove('pdf-copy-active'), 2000);
 
-    // Apply PDF export constraint class (forces exact A4 printable width)
+    // Apply PDF export styling to optimize document proportions for A4
     reportElem.classList.add('exporting-pdf');
 
     const finishExport = () => {
       reportElem.classList.remove('exporting-pdf');
-      window.scrollTo(0, prevScrollY);
       if (activeBtn) {
         activeBtn.disabled = false;
         activeBtn.innerHTML = origHtml;
@@ -724,16 +786,16 @@ class LegalMetrologyPortalApp {
 
     if (window.html2pdf) {
       const opt = {
-        margin:       [6, 6, 6, 6],
+        margin:       [8, 8, 8, 8],
         filename:     filename,
         image:        { type: 'jpeg', quality: 0.98 },
         html2canvas:  {
           scale: 2,
           useCORS: true,
-          scrollY: 0,
+          logging: false,
+          letterRendering: true,
           scrollX: 0,
-          windowWidth: 800,
-          logging: false
+          scrollY: 0
         },
         jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
         pagebreak:    { mode: ['avoid-all', 'css', 'legacy'] }
@@ -757,12 +819,14 @@ class LegalMetrologyPortalApp {
   _reverify() {
     this.iterationCount++;
     this.navAttemptNum.textContent  = this.iterationCount;
-    this.statAttemptHero.textContent= this.iterationCount;
+    if (this.statAttemptHero) this.statAttemptHero.textContent = this.iterationCount;
     this.navBadge.style.display     = 'inline-flex';
 
     // Keep product data pre-filled, clear only uploaded files
     this.uploadedFiles = [];
+    this.uploadedImagePreview = null;
     this._renderFileList();
+    this._updateDropzonePreview();
     this._populateForm();
 
     // Show info alert on upload step

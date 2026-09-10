@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
+``````````````
   <!-- ╔══════════════════════════════════════════════════════════╗ -->
   <!-- ║  FSSAI-STYLE SLIDE-OUT SIDEBAR DRAWER & OVERLAY          ║ -->
   <!-- ╚══════════════════════════════════════════════════════════╝ -->
@@ -50,12 +50,6 @@
           <a class="drawer-link active" id="drawer-link-inspection" href="javascript:void(0)">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="2"/><path d="m9 12 2 2 4-4"/></svg>
             <span>Inspection Desk (3 Steps)</span>
-          </a>
-        </li>
-        <li>
-          <a class="drawer-link" id="drawer-link-gazette" href="javascript:void(0)">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-            <span>2026 Rules Gazette</span>
           </a>
         </li>
         <li>
@@ -165,11 +159,6 @@
       </div>
 
       <div class="header-actions">
-        <button id="btn-open-gazette" class="gazette-pill-btn" title="View 2026 Amendment Quick Reference">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-          2026 Rules Gazette
-        </button>
-
         <!-- Officer Chip (visible after login) -->
         <div id="header-officer-chip" class="officer-chip" style="display:none;">
           <div class="officer-avatar" id="officer-avatar-initials">RS</div>
@@ -202,7 +191,6 @@
         <a class="nav-link" id="nav-link-home" href="javascript:void(0)">Home</a>
         <a class="nav-link active" id="nav-link-inspection" href="javascript:void(0)">Inspection Desk</a>
         <a class="nav-link" id="nav-link-cases" href="javascript:void(0)">Case Repository</a>
-        <a class="nav-link" id="nav-link-rules" href="javascript:void(0)">2026 Rules Gazette</a>
         <a class="nav-link" id="nav-link-about" href="javascript:void(0)">About Us</a>
         <a class="nav-link" id="nav-link-contact" href="javascript:void(0)">Contact Us</a>
       </div>
@@ -365,31 +353,31 @@
 
           <!-- Coloured Arrow Bars (like FSSAI's 15 Key Areas diagram) -->
           <div class="home-arrows">
-            <div class="home-arrow-item" style="--clr:#1D7A3A; --w:100%">
+            <div class="home-arrow-item" style="--clr:#1D7A3A; --w:44%">
               <div class="arrow-bar"><div class="arrow-head"></div></div>
               <div class="arrow-label">Manufacturer Address with PIN</div>
             </div>
-            <div class="home-arrow-item" style="--clr:#2563EB; --w:92%">
+            <div class="home-arrow-item" style="--clr:#2563EB; --w:40%">
               <div class="arrow-bar"><div class="arrow-head"></div></div>
               <div class="arrow-label">Generic Name of Commodity</div>
             </div>
-            <div class="home-arrow-item" style="--clr:#7C3AED; --w:85%">
+            <div class="home-arrow-item" style="--clr:#7C3AED; --w:36%">
               <div class="arrow-bar"><div class="arrow-head"></div></div>
               <div class="arrow-label">Net Quantity in Legal Units</div>
             </div>
-            <div class="home-arrow-item" style="--clr:#D97706; --w:78%">
+            <div class="home-arrow-item" style="--clr:#D97706; --w:32%">
               <div class="arrow-bar"><div class="arrow-head"></div></div>
               <div class="arrow-label">MRP + Unit Sale Price (USP)</div>
             </div>
-            <div class="home-arrow-item" style="--clr:#DC2626; --w:70%">
+            <div class="home-arrow-item" style="--clr:#DC2626; --w:28%">
               <div class="arrow-bar"><div class="arrow-head"></div></div>
               <div class="arrow-label">Month &amp; Year of Manufacture</div>
             </div>
-            <div class="home-arrow-item" style="--clr:#0891B2; --w:62%">
+            <div class="home-arrow-item" style="--clr:#0891B2; --w:24%">
               <div class="arrow-bar"><div class="arrow-head"></div></div>
               <div class="arrow-label">Consumer Care Email &amp; Phone</div>
             </div>
-            <div class="home-arrow-item" style="--clr:#65A30D; --w:54%">
+            <div class="home-arrow-item" style="--clr:#65A30D; --w:20%">
               <div class="arrow-bar"><div class="arrow-head"></div></div>
               <div class="arrow-label">Country of Origin</div>
             </div>
@@ -411,13 +399,6 @@
           <div class="service-desc">Upload label &amp; run compliance check against 2026 rules</div>
         </div>
 
-        <div class="home-service-card" onclick="document.getElementById('btn-open-gazette').click()">
-          <div class="service-icon" style="background:#FFF3ED; color:#B45309;">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><line x1="9" y1="9" x2="15" y2="9"/><line x1="9" y1="13" x2="13" y2="13"/></svg>
-          </div>
-          <div class="service-title">2026 Rules Gazette</div>
-          <div class="service-desc">Quick reference — USP, Font Height, PIN Code mandates</div>
-        </div>
 
         <div class="home-service-card" onclick="document.getElementById('btn-demo-login').click()">
           <div class="service-icon" style="background:#F0FDF4; color:#1D7A3A;">
@@ -469,63 +450,6 @@
       </div>
     </div>
 
-    <!-- FSSAI-style Hero Banner (Inspection Desk only) -->
-    <div class="hero-banner" id="hero-banner-inspection">
-    <div class="hero-banner">
-      <div class="hero-inner">
-        <div class="hero-text">
-          <div class="hero-eyebrow">Legal Metrology Enforcement</div>
-          <h2 class="hero-title">Packaged Commodities<br>Compliance Verification</h2>
-          <p class="hero-subtitle">
-            Check compliance of packaged commodity labels under Legal Metrology (Packaged Commodities) Rules, 2011 as amended up to 2026, including Rule 6 mandatory declarations and Rule 9 font height standards.
-          </p>
-          <div class="hero-stats">
-            <div class="hero-stat-card">
-              <div class="stat-number">7</div>
-              <div class="stat-label">Mandatory Declarations</div>
-            </div>
-            <div class="hero-stat-card">
-              <div class="stat-number">5</div>
-              <div class="stat-label">Font Size Grades</div>
-            </div>
-            <div class="hero-stat-card">
-              <div class="stat-number" id="stat-attempt-hero">1</div>
-              <div class="stat-label">Current Attempt</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Quick Action Panel -->
-        <div class="hero-quick-panel">
-          <div class="hero-panel-title">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-            Quick Actions
-          </div>
-          <button class="quick-action-btn" onclick="window.portalApp && window.portalApp.goToStep(1)">
-            <span class="qa-icon qa-orange">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-            </span>
-            <span>Upload New Product Files</span>
-            <span class="qa-arrow">›</span>
-          </button>
-          <button class="quick-action-btn" onclick="window.portalApp && window.portalApp.loadSample('sample_01')">
-            <span class="qa-icon qa-teal">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </span>
-            <span>Load Sample — FMCG (Fail)</span>
-            <span class="qa-arrow">›</span>
-          </button>
-          <button class="quick-action-btn" onclick="window.portalApp && window.portalApp.loadSample('sample_03')">
-            <span class="qa-icon qa-green">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-            </span>
-            <span>Load Sample — Amul Ghee (Pass)</span>
-            <span class="qa-arrow">›</span>
-          </button>
-        </div>
-      </div>
-    </div>
-    </div><!-- /hero-banner-inspection -->
 
     <!-- ════════════════════════════════════════════════════
          WORKSPACE LAYOUT = LEFT SIDEBAR + MAIN CONTENT
@@ -608,12 +532,6 @@
               <a class="sidebar-nav-link sb-nav-link" id="nav-contact" onclick="window.portalApp && window.portalApp.showPage('contact')">
                 <svg class="sb-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                 <span>Contact &amp; Grievance</span>
-              </a>
-            </li>
-            <li class="sb-nav-item">
-              <a class="sidebar-nav-link sb-nav-link" id="btn-open-gazette-sb">
-                <svg class="sb-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-                <span>2026 Rules Gazette</span>
               </a>
             </li>
             <li class="sb-nav-item">
@@ -701,18 +619,46 @@
               <span id="upload-alert-text">Invalid file format detected.</span>
             </div>
 
-            <!-- Drag-and-Drop Zone -->
+            <!-- Drag-and-Drop Zone with Instant In-Box Photo/PDF Preview -->
             <div id="dropzone" class="dropzone">
-              <div class="dropzone-icon">
-                <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="var(--fssai-teal)" stroke-width="1.6" style="margin: 0 auto 10px; display: block;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+              <!-- Default empty dropzone state -->
+              <div id="dropzone-default" class="dropzone-default">
+                <div class="dropzone-icon">
+                  <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="var(--fssai-teal)" stroke-width="1.6" style="margin: 0 auto 10px; display: block;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                </div>
+                <div class="dropzone-title">Drag &amp; drop product label images/files here, or click to browse</div>
+                <div class="dropzone-sub">Accept ONLY: PDF, JPG, PNG — all other formats will be rejected</div>
+                <div class="type-chips">
+                  <span class="type-chip">PDF</span>
+                  <span class="type-chip">JPG / JPEG</span>
+                  <span class="type-chip">PNG</span>
+                </div>
               </div>
-              <div class="dropzone-title">Drag &amp; drop product label images/files here, or click to browse</div>
-              <div class="dropzone-sub">Accept ONLY: PDF, JPG, PNG — all other formats will be rejected</div>
-              <div class="type-chips">
-                <span class="type-chip">PDF</span>
-                <span class="type-chip">JPG / JPEG</span>
-                <span class="type-chip">PNG</span>
+
+              <!-- Uploaded file photo preview state inside dropzone -->
+              <div id="dropzone-preview" class="dropzone-preview" style="display:none;">
+                <div class="dropzone-preview-inner">
+                  <div class="dropzone-img-wrap" id="dropzone-img-wrap">
+                    <img id="dropzone-img-elem" src="" alt="Uploaded Product Label Photo" class="dropzone-preview-img">
+                    <div id="dropzone-pdf-badge" class="dropzone-pdf-badge" style="display:none;">
+                      <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                      <span class="dropzone-pdf-label">PDF Document Uploaded</span>
+                    </div>
+                  </div>
+                  <div class="dropzone-preview-meta">
+                    <div class="dropzone-preview-name" id="dropzone-preview-name">—</div>
+                    <div class="dropzone-preview-status">
+                      <span class="badge-dot-green"></span>
+                      <span id="dropzone-preview-size">—</span> · <span style="color:#047857; font-weight:700;">File Ready for Verification</span>
+                    </div>
+                    <div class="dropzone-replace-hint">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                      Click or drag to change / replace file
+                    </div>
+                  </div>
+                </div>
               </div>
+
               <input type="file" id="file-input" style="display:none;" multiple accept=".pdf,.jpg,.jpeg,.png">
             </div>
 
@@ -822,161 +768,191 @@
       <!-- ────────────────────────── STEP 3 ────────────────────────── -->
       <div id="step-3-container" style="display:none;">
 
-        <!-- PASS / FAIL Result Banner -->
-        <div id="result-banner" class="result-banner pass">
-          <div class="result-left">
-            <div id="result-icon" class="result-icon">✓</div>
-            <div>
-              <div id="result-heading" class="result-heading">Verification Successful</div>
-              <div id="result-desc" class="result-desc">All mandatory declarations comply with Legal Metrology Rules, 2011 (Amended 2026).</div>
-            </div>
-          </div>
-          <div>
-            <!-- PASS: Download PDF button -->
-            <button id="btn-download-pass" class="btn btn-success" style="display:none;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              Download Report (PDF)
-            </button>
-          </div>
-        </div>
+        <!-- ════ SECTION 1: VERIFICATION RESULTS & ACTION DESK (APPEARS FIRST) ════ -->
+        <div class="step3-results-section">
 
-        <!-- FAIL Action Bar -->
-        <div id="fail-action-bar" class="fail-action-bar" style="display:none;">
-          <div class="fail-bar-label">Non-Compliance Identified — Action Required</div>
-          <div class="fail-choices">
-            <button id="btn-send-complaint" class="btn btn-danger">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-              Send Report to Government (Complaint)
-            </button>
-            <button id="btn-ignore" class="btn btn-ghost">Ignore (Archive Case)</button>
-            <button id="btn-print-fail" class="btn btn-outline">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-              Print / Save PDF Notice
-            </button>
-          </div>
-          <!-- Inline confirmation toast (hidden by default) -->
-          <div id="inline-toast" class="inline-toast complaint" style="display:none;"></div>
-        </div>
-
-        <!-- Re-verify bar -->
-        <div class="reverify-bar">
-          <div class="reverify-text">
-            <strong>Re-verification Feature</strong>
-            Inspector can re-upload clearer photos or re-run inspection. All product details remain <em>pre-filled</em>.
-          </div>
-          <button id="btn-reverify" class="btn btn-orange">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
-            Re-verify Product
-          </button>
-        </div>
-
-        <!-- Violations & Passed Declarations -->
-        <div class="result-columns" id="result-columns">
-
-          <!-- Violations Column -->
-          <div id="violations-wrap" class="violations-section" style="display:none;">
-            <div class="section-heading" style="color: var(--status-fail);">
-              <span>✕</span> Detected Violations
-            </div>
-            <div id="violations-list"></div>
-          </div>
-
-          <!-- Passed Column -->
-          <div id="passed-wrap">
-            <div class="section-heading" style="color: var(--status-pass);">
-              <span>✓</span> Verified Declarations (Rule 6 Checklist)
-            </div>
-            <div id="passed-list" class="pass-checklist"></div>
-          </div>
-
-        </div>
-
-        <!-- Official Report Embed -->
-        <div class="report-embed" id="official-report">
-          <div class="report-embed-header">
-            <div style="display: flex; align-items: center; gap: 14px;">
-              <div style="width: 44px; height: 44px; background: #FFF; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 1px 3px rgba(0,0,0,.15);">
-                <img src="emblem_clean.png" alt="National Emblem of India" style="width: 28px; height: auto;">
-              </div>
+          <!-- PASS / FAIL Result Banner -->
+          <div id="result-banner" class="result-banner pass">
+            <div class="result-left">
+              <div id="result-icon" class="result-icon">✓</div>
               <div>
-                <div class="report-ministry-label">Government of India · Ministry of Consumer Affairs, Food &amp; Public Distribution</div>
-                <div class="report-title-big">PACKAGED COMMODITY INSPECTION &amp; COMPLIANCE REPORT</div>
-                <div class="report-sub-small">Issued under Legal Metrology Act, 2009 &amp; PCR Rules 2011 (Amended 2026) — Section 36</div>
+                <div id="result-heading" class="result-heading">Verification Successful</div>
+                <div id="result-desc" class="result-desc">All mandatory declarations comply with Legal Metrology Rules, 2011 (Amended 2026).</div>
               </div>
             </div>
-            <div class="report-meta-right">
-              <div class="report-case-num" id="rep-case-num">CASE-REF: LM-2026-XXXXX</div>
-              <div class="report-date-txt" id="rep-date">Date: —</div>
-            </div>
-          </div>
-          <div class="report-body">
-            <!-- Verdict Banner inside PDF -->
-            <div id="rep-verdict-banner" style="margin-bottom: 14px;"></div>
-
-            <!-- Product Dossier & Evidence Image Grid -->
-            <div class="report-dossier-grid" style="display: flex; gap: 14px; margin-bottom: 14px; align-items: stretch;">
-              <div style="flex: 1;">
-                <table class="report-table" style="height: 100%; margin-bottom: 0; table-layout: fixed; width: 100%;">
-                  <tr>
-                    <td class="lbl" style="width: 25%;">Commodity Inspected</td>
-                    <td id="rep-name" style="font-weight:700; width: 33%;">—</td>
-                    <td class="lbl" style="width: 20%;">Category</td>
-                    <td id="rep-category" style="width: 22%;">—</td>
-                  </tr>
-                  <tr>
-                    <td class="lbl">Batch / Lot / Barcode</td>
-                    <td id="rep-batch">—</td>
-                    <td class="lbl">Declared Net Quantity</td>
-                    <td id="rep-qty">—</td>
-                  </tr>
-                  <tr>
-                    <td class="lbl">Inspecting Officer</td>
-                    <td id="rep-officer">Sh. Rajesh Sharma (Senior Inspector, Delhi Central)</td>
-                    <td class="lbl">Compliance Verdict</td>
-                    <td id="rep-status" style="font-weight:800;">—</td>
-                  </tr>
-                  <tr>
-                    <td class="lbl">Inspection Attempt</td>
-                    <td id="rep-attempt">—</td>
-                    <td class="lbl">Compliance Score</td>
-                    <td id="rep-score" style="font-weight:700;">—</td>
-                  </tr>
-                  <tr>
-                    <td class="lbl">Inspection Notes</td>
-                    <td id="rep-notes" colspan="3">—</td>
-                  </tr>
-                </table>
-              </div>
-              <!-- Right: Evidence Label Photo Box -->
-              <div style="width: 175px; border: 1.5px solid #CBD5E1; border-radius: 6px; padding: 8px; background: #F8FAFC; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; flex-shrink: 0;">
-                <div style="font-size: 10px; font-weight: 700; text-transform: uppercase; color: #0B2545; margin-bottom: 6px; letter-spacing: .5px;">
-                  Inspected Label Photo
-                </div>
-                <div style="max-height: 110px; max-width: 155px; display: flex; align-items: center; justify-content: center; overflow: hidden; background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 4px; padding: 4px;">
-                  <img id="rep-evidence-img" src="" alt="Label Evidence" style="max-height: 100px; max-width: 145px; object-fit: contain;">
-                </div>
-                <div id="rep-evidence-filename" style="font-size: 9px; color: #64748B; margin-top: 5px; word-break: break-all; max-width: 155px;">
-                  label_evidence.jpg
-                </div>
-              </div>
-            </div>
-
-            <!-- Dynamic Findings & Full Rule Checklist in Report -->
-            <div id="rep-findings-wrap" style="margin-top: 14px;"></div>
-
-            <div class="report-sign-row">
-              <div class="govt-seal">
-                Department of Consumer Affairs<br>
-                Legal Metrology Enforcement Cell
-              </div>
-              <div class="sign-block">
-                <div class="sign-cursive">R. Sharma</div>
-                <div class="sign-name">(Rajesh Sharma, LMO)</div>
-                <div class="sign-role">Authorised Legal Metrology Officer · Central Enforcement Zone</div>
-              </div>
+            <div>
+              <!-- PASS: Download PDF button -->
+              <button id="btn-download-pass" class="btn btn-success" style="display:none;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download Report (PDF)
+              </button>
             </div>
           </div>
-        </div>
+
+          <!-- FAIL Action Bar -->
+          <div id="fail-action-bar" class="fail-action-bar" style="display:none;">
+            <div class="fail-bar-label">Non-Compliance Identified — Action Required</div>
+            <div class="fail-choices">
+              <button id="btn-send-complaint" class="btn btn-danger">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                Send Report to Government (Complaint)
+              </button>
+              <button id="btn-ignore" class="btn btn-ghost">Ignore (Archive Case)</button>
+              <button id="btn-print-fail" class="btn btn-outline">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                Print / Save PDF Notice
+              </button>
+            </div>
+            <!-- Inline confirmation toast (hidden by default) -->
+            <div id="inline-toast" class="inline-toast complaint" style="display:none;"></div>
+          </div>
+
+          <!-- Re-verify bar -->
+          <div class="reverify-bar">
+            <div class="reverify-text">
+              <strong>Re-verification Feature</strong>
+              Inspector can re-upload clearer photos or re-run inspection. All product details remain <em>pre-filled</em>.
+            </div>
+            <button id="btn-reverify" class="btn btn-orange">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+              Re-verify Product
+            </button>
+          </div>
+
+          <!-- Violations & Passed Declarations -->
+          <div class="result-columns" id="result-columns">
+
+            <!-- Violations Column -->
+            <div id="violations-wrap" class="violations-section" style="display:none;">
+              <div class="section-heading" style="color: var(--status-fail);">
+                <span>✕</span> Detected Violations
+              </div>
+              <div id="violations-list"></div>
+            </div>
+
+            <!-- Passed Column -->
+            <div id="passed-wrap" class="passed-section">
+              <div class="section-heading" style="color: var(--status-pass);">
+                <span>✓</span> Verified Declarations (Rule 6 Checklist)
+              </div>
+              <div id="passed-list" class="pass-checklist"></div>
+            </div>
+
+          </div>
+
+        </div><!-- /step3-results-section -->
+
+        <!-- ════ SECTION 2: OFFICIAL INSPECTION REPORT & PDF NOTICE (APPEARS AFTER) ════ -->
+        <div class="step3-pdf-section" id="step3-pdf-section">
+          
+          <div class="pdf-section-header">
+            <div class="pdf-section-header-left">
+              <span class="pdf-chip">OFFICIAL REPORT</span>
+              <div>
+                <div class="pdf-section-title">Official Inspection Report &amp; Notice (PDF Copy)</div>
+                <div class="pdf-section-sub">Generated legal metrology enforcement notice under Section 36, Legal Metrology Act, 2009</div>
+              </div>
+            </div>
+            <div class="pdf-section-header-actions">
+              <button type="button" id="btn-copy-download-pdf" class="btn btn-sm btn-primary" onclick="window.portalApp && window.portalApp.downloadReportPDF()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download Official PDF
+              </button>
+              <button type="button" class="btn btn-sm btn-outline" onclick="window.print()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                Print Notice
+              </button>
+            </div>
+          </div>
+
+          <!-- Official Report Embed (The actual document exported to PDF) -->
+          <div class="report-embed" id="official-report">
+            <div class="report-embed-header">
+              <div style="display: flex; align-items: center; gap: 14px;">
+                <div style="width: 44px; height: 44px; background: #FFF; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 1px 3px rgba(0,0,0,.15);">
+                  <img id="rep-govt-emblem" src="emblem_clean.png" alt="National Emblem of India" style="width: 28px; height: auto;">
+                </div>
+                <div>
+                  <div class="report-ministry-label">Government of India · Ministry of Consumer Affairs, Food &amp; Public Distribution</div>
+                  <div class="report-title-big">PACKAGED COMMODITY INSPECTION &amp; COMPLIANCE REPORT</div>
+                  <div class="report-sub-small">Issued under Legal Metrology Act, 2009 &amp; PCR Rules 2011 (Amended 2026) — Section 36</div>
+                </div>
+              </div>
+              <div class="report-meta-right">
+                <div class="report-case-num" id="rep-case-num">CASE-REF: LM-2026-XXXXX</div>
+                <div class="report-date-txt" id="rep-date">Date: —</div>
+              </div>
+            </div>
+            <div class="report-body">
+              <!-- Verdict Banner inside PDF -->
+              <div id="rep-verdict-banner" style="margin-bottom: 14px;"></div>
+
+              <!-- Product Dossier & Evidence Image Grid -->
+              <div class="report-dossier-grid" style="display: flex; gap: 12px; margin-bottom: 12px; align-items: stretch;">
+                <!-- Left: Evidence Label Photo Box -->
+                <div class="report-evidence-box" style="width: 135px; min-width: 120px; border: 1.5px solid #CBD5E1; border-radius: 6px; padding: 6px; background: #F8FAFC; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <div style="font-size: 9.5px; font-weight: 700; text-transform: uppercase; color: #0B2545; margin-bottom: 5px; letter-spacing: .5px;">
+                    Inspected Label
+                  </div>
+                  <div style="max-height: 105px; max-width: 120px; display: flex; align-items: center; justify-content: center; overflow: hidden; background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 4px; padding: 3px;">
+                    <img id="rep-evidence-img" src="" alt="Label Evidence" style="max-height: 95px; max-width: 114px; object-fit: contain;">
+                  </div>
+                  <div id="rep-evidence-filename" style="font-size: 8.5px; color: #64748B; margin-top: 4px; word-break: break-all; max-width: 120px; line-height: 1.2;">
+                    label_evidence.jpg
+                  </div>
+                </div>
+                <!-- Right: Commodity Inspection Details Table -->
+                <div style="flex: 1; min-width: 0;">
+                  <table class="report-table" style="height: 100%; margin-bottom: 0; width: 100%;">
+                    <tr>
+                      <td class="lbl">Commodity</td>
+                      <td id="rep-name" style="font-weight:700;">—</td>
+                      <td class="lbl">Category</td>
+                      <td id="rep-category">—</td>
+                    </tr>
+                    <tr>
+                      <td class="lbl">Batch / Barcode</td>
+                      <td id="rep-batch">—</td>
+                      <td class="lbl">Declared Net Qty</td>
+                      <td id="rep-qty">—</td>
+                    </tr>
+                    <tr>
+                      <td class="lbl">Inspecting Officer</td>
+                      <td id="rep-officer">Sh. Rajesh Sharma (Senior Inspector, Delhi Central)</td>
+                      <td class="lbl">Verdict</td>
+                      <td id="rep-status" style="font-weight:800;">—</td>
+                    </tr>
+                    <tr>
+                      <td class="lbl">Attempt</td>
+                      <td id="rep-attempt">—</td>
+                      <td class="lbl">Score</td>
+                      <td id="rep-score" style="font-weight:700;">—</td>
+                    </tr>
+                    <tr>
+                      <td class="lbl">Inspection Notes</td>
+                      <td id="rep-notes" colspan="3">—</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <!-- Dynamic Findings & Full Rule Checklist in Report -->
+              <div id="rep-findings-wrap" style="margin-top: 14px;"></div>
+
+              <div class="report-sign-row">
+                <div class="govt-seal">
+                  Department of Consumer Affairs<br>
+                  Legal Metrology Enforcement Cell
+                </div>
+                <div class="sign-block">
+                  <div class="sign-cursive">R. Sharma</div>
+                  <div class="sign-name">(Rajesh Sharma, LMO)</div>
+                  <div class="sign-role">Authorised Legal Metrology Officer · Central Enforcement Zone</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!-- /step3-pdf-section -->
 
       </div><!-- /step-3 -->
 
@@ -1532,7 +1508,6 @@
             <li><a href="javascript:void(0)">LM Act, 2009</a></li>
             <li><a href="javascript:void(0)">PCR Rules, 2011</a></li>
             <li><a href="javascript:void(0)">2024-26 Amendments</a></li>
-            <li><a href="javascript:void(0)">Gazette Notifications</a></li>
           </ul>
         </div>
         <div>
@@ -1566,6 +1541,7 @@
     </div>
   </footer>
 
+  <script src="emblem_b64.js"></script>
   <script src="html2pdf.bundle.min.js"></script>
   <script type="module" src="app.js"></script>
 
