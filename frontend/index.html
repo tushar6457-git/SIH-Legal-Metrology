@@ -1,18 +1,1549 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="apple-touch-icon" href="/assets/emblem.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0B3B60" />
-    <title>उपभोक्ता मामले विभाग | Department of Consumer Affairs | Legal Metrology Portal (LMR 2011)</title>
-    <meta name="description" content="Official Packaged Commodities Compliance and Verification Portal of the Directorate of Legal Metrology, Department of Consumer Affairs, Ministry of Consumer Affairs, Food &amp; Public Distribution, Government of India." />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legal Metrology Inspector Portal | Department of Consumer Affairs, Govt. of India</title>
+  <meta name="description" content="Packaged Commodities Compliance Checking System under Legal Metrology (Packaged Commodities) Rules, 2011 (Amended 2026) — Department of Consumer Affairs, Ministry of Consumer Affairs, Food & Public Distribution, Govt. of India.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+``````````````
+  <!-- ╔══════════════════════════════════════════════════════════╗ -->
+  <!-- ║  FSSAI-STYLE SLIDE-OUT SIDEBAR DRAWER & OVERLAY          ║ -->
+  <!-- ╚══════════════════════════════════════════════════════════╝ -->
+  <div id="fssai-sidebar-overlay" class="fssai-sidebar-overlay" aria-hidden="true"></div>
+
+  <aside id="fssai-sidebar-drawer" class="fssai-sidebar-drawer" role="dialog" aria-label="Legal Metrology Portal Navigation Menu">
+    <!-- Drawer Header -->
+    <div class="drawer-header">
+      <div class="drawer-brand">
+        <!-- Official State Emblem of India -->
+        <div class="drawer-emblem-wrap">
+          <img src="emblem_clean.png" alt="State Emblem of India | भारत का राज्य प्रतीक" class="drawer-emblem-img" width="38" height="46">
+        </div>
+        <div>
+          <div class="drawer-title">LEGAL METROLOGY</div>
+          <div class="drawer-sub">Department of Consumer Affairs</div>
+          <div class="drawer-ministry">Govt. of India · PCR 2026 Enforcement</div>
+        </div>
+      </div>
+      <button id="btn-close-sidebar" class="drawer-close-btn" aria-label="Close Menu">&times;</button>
+    </div>
+
+    <!-- Drawer Content Scrollable -->
+    <div class="drawer-content">
+
+      <!-- Navigation Section -->
+      <div class="drawer-section-title">Navigation Desk</div>
+      <ul class="drawer-menu-list">
+        <li>
+          <a class="drawer-link" id="drawer-link-home" href="javascript:void(0)">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <span>Home Overview</span>
+          </a>
+        </li>
+        <li>
+          <a class="drawer-link active" id="drawer-link-inspection" href="javascript:void(0)">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="2"/><path d="m9 12 2 2 4-4"/></svg>
+            <span>Inspection Desk (3 Steps)</span>
+          </a>
+        </li>
+        <li>
+          <a class="drawer-link" id="drawer-link-cases" href="javascript:void(0)">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+            <span>Case Repository</span>
+          </a>
+        </li>
+        <li>
+          <a class="drawer-link" id="drawer-link-about" href="javascript:void(0)">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            <span>About Us (विभाग परिचय)</span>
+          </a>
+        </li>
+        <li>
+          <a class="drawer-link" id="drawer-link-contact" href="javascript:void(0)">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>Contact Us (संपर्क सूत्र)</span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- About Us Featured Box -->
+      <div class="drawer-info-card">
+        <div class="drawer-info-badge">About Us · हमारे बारे में</div>
+        <div class="drawer-info-title">Department of Consumer Affairs</div>
+        <p class="drawer-info-desc">
+          Enforcing accuracy in net weights, measures, mandatory Unit Sale Price (USP), and strict font-height compliance across all packaged commodities under PCR 2011 (Amended 2026).
+        </p>
+        <button id="drawer-btn-read-about" class="drawer-card-btn">
+          View Mandate &amp; Details &rarr;
+        </button>
+      </div>
+
+      <!-- Contact Us Helpline Card -->
+      <div class="drawer-info-card contact-card">
+        <div class="drawer-info-badge badge-orange">Contact &amp; Grievance</div>
+        <div class="drawer-contact-line">
+          <strong>National Consumer Helpline:</strong> <span>1915</span>
+        </div>
+        <div class="drawer-contact-line">
+          <strong>WhatsApp Support:</strong> <span>8800001915</span>
+        </div>
+        <div class="drawer-contact-line">
+          <strong>HQ:</strong> Krishi Bhawan, New Delhi - 110001
+        </div>
+        <button id="drawer-btn-open-contact" class="drawer-card-btn btn-orange">
+          Open Official Contact Form &rarr;
+        </button>
+      </div>
+
+      <!-- Officer Profile Quick Strip -->
+      <div class="drawer-officer-strip">
+        <div class="officer-avatar">RS</div>
+        <div>
+          <div class="officer-name">Sh. Rajesh Sharma</div>
+          <div class="officer-role">Senior Inspector · Delhi Central Zone</div>
+        </div>
+      </div>
+
+    </div>
+  </aside>
+
+  <!-- ╔══════════════════════════════════════════════════════════╗ -->
+  <!-- ║  TOP UTILITY BAR  (Government identity, accessibility)  ║ -->
+  <!-- ╚══════════════════════════════════════════════════════════╝ -->
+  <div class="top-utility-bar">
+    <div class="top-utility-inner">
+      <div class="top-utility-left">
+        <a href="#main-content" class="skip-link">Skip to Main Content</a>
+        <span class="top-gov-label">भारत सरकार | Government of India &nbsp;&bull;&nbsp; Ministry of Consumer Affairs, Food &amp; Public Distribution</span>
+      </div>
+      <div class="top-utility-right">
+        <div class="top-accessibility">
+          <button class="acc-btn" id="btn-font-dec" title="Decrease font size">A-</button>
+          <button class="acc-btn" id="btn-font-norm" title="Normal font size">A</button>
+          <button class="acc-btn" id="btn-font-inc" title="Increase font size">A+</button>
+          <button class="acc-btn" id="btn-contrast" title="High contrast">◑</button>
+        </div>
+        <div class="top-lang-switch">
+          <button class="lang-btn active" id="lang-en">English</button>
+          <button class="lang-btn" id="lang-hi">हिंदी</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ╔═══════════════════════════════════════════════════╗ -->
+  <!-- ║  SITE HEADER  (Emblem + portal title + actions)  ║ -->
+  <!-- ╚═══════════════════════════════════════════════════╝ -->
+  <header class="site-header">
+    <div class="site-header-inner">
+      <div class="header-brand">
+        <!-- Government of India Authentic State Emblem -->
+        <div class="emblem-wrap">
+          <div class="official-lion-capital" title="State Emblem of India | भारत का राज्य प्रतीक">
+            <img src="emblem_clean.png" alt="State Emblem of India | भारत का राज्य प्रतीक" class="site-emblem-img" width="48" height="60">
+          </div>
+          <div class="brand-divider"></div>
+        </div>
+
+        <div class="brand-text-block">
+          <span class="brand-ministry">Department of Consumer Affairs &nbsp;|&nbsp; उपभोक्ता मामले विभाग</span>
+          <h1 class="brand-portal-name">Legal Metrology Inspector Portal</h1>
+          <span class="brand-portal-sub">Packaged Commodities Compliance Enforcement System — PCR Rules, 2011 (Amended 2026)</span>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <!-- Officer Chip (visible after login) -->
+        <div id="header-officer-chip" class="officer-chip" style="display:none;">
+          <div class="officer-avatar" id="officer-avatar-initials">RS</div>
+          <div class="officer-info">
+            <div class="officer-name" id="officer-display-name">Sh. Rajesh Sharma</div>
+            <div class="officer-role" id="officer-display-role">Senior Inspector · Delhi Central</div>
+          </div>
+          <button id="btn-logout" class="btn-logout">Logout</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ╔══════════════════════════════════════════════════╗ -->
+  <!-- ║  PRIMARY NAV  (teal horizontal menu like FSSAI) ║ -->
+  <!-- ╚══════════════════════════════════════════════════╝ -->
+  <nav class="primary-nav" id="primary-nav" aria-label="Primary Navigation">
+    <div class="primary-nav-inner">
+      <div class="nav-items">
+        <!-- FSSAI-style Menu Toggle -->
+        <button id="btn-toggle-sidebar" class="nav-menu-toggle-btn" aria-label="Open Sidebar Menu">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+          <span>Menu</span>
+        </button>
+
+        <a class="nav-link" id="nav-link-home" href="javascript:void(0)">Home</a>
+        <a class="nav-link active" id="nav-link-inspection" href="javascript:void(0)">Inspection Desk</a>
+        <a class="nav-link" id="nav-link-cases" href="javascript:void(0)">Case Repository</a>
+        <a class="nav-link" id="nav-link-about" href="javascript:void(0)">About Us</a>
+        <a class="nav-link" id="nav-link-contact" href="javascript:void(0)">Contact Us</a>
+      </div>
+      <div class="nav-right-actions">
+        <div class="nav-search-box">
+          <svg class="nav-search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="search" placeholder="Search cases, products..." id="nav-search-input">
+        </div>
+        <div id="nav-iteration-badge" class="nav-iteration-badge" style="display:none;">
+          Re-verification &mdash; Attempt <span id="nav-attempt-num">1</span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ╔════════════════════════════════════════════════════════╗ -->
+  <!-- ║   HOME PAGE  (FSSAI-style · Warm paper · Hero card)  ║ -->
+  <!-- ╚════════════════════════════════════════════════════════╝ -->
+  <div id="view-login">
+
+    <!-- ── FSSAI-style Hero Full-width Section ── -->
+    <section class="home-hero" id="main-content" aria-label="Homepage Hero">
+
+      <!-- Botanical / floral SVG background decoration -->
+      <div class="home-hero-bg" aria-hidden="true">
+        <!-- Large flower top-right -->
+        <svg class="herb herb-tr" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+          <g opacity=".18" stroke="#8B6914" fill="none" stroke-width="1.2">
+            <ellipse cx="150" cy="150" rx="60" ry="100" transform="rotate(-30 150 150)"/>
+            <ellipse cx="150" cy="150" rx="60" ry="100" transform="rotate(10 150 150)"/>
+            <ellipse cx="150" cy="150" rx="60" ry="100" transform="rotate(50 150 150)"/>
+            <ellipse cx="150" cy="150" rx="60" ry="100" transform="rotate(90 150 150)"/>
+            <circle cx="150" cy="150" r="18" fill="#C49A28" opacity=".35"/>
+            <line x1="150" y1="150" x2="150" y2="260" stroke-width="2"/>
+            <ellipse cx="120" cy="240" rx="24" ry="14" transform="rotate(-30 120 240)" fill="#8B6914" opacity=".12"/>
+            <ellipse cx="178" cy="255" rx="20" ry="12" transform="rotate(20 178 255)" fill="#8B6914" opacity=".12"/>
+          </g>
+        </svg>
+        <!-- Leaves bottom-left -->
+        <svg class="herb herb-bl" viewBox="0 0 240 300" xmlns="http://www.w3.org/2000/svg">
+          <g opacity=".15" stroke="#6B7A3A" fill="none" stroke-width="1.1">
+            <path d="M40 280 Q80 220 120 200 Q160 180 180 140"/>
+            <path d="M180 140 Q120 160 100 200 Q80 240 60 270"/>
+            <ellipse cx="180" cy="140" rx="35" ry="55" transform="rotate(-40 180 140)" fill="#7A8C2A" opacity=".18"/>
+            <ellipse cx="165" cy="165" rx="28" ry="45" transform="rotate(-20 165 165)" fill="#7A8C2A" opacity=".12"/>
+            <path d="M40 280 Q20 260 15 240 Q10 200 40 180" fill="#8B6914" opacity=".1"/>
+          </g>
+        </svg>
+        <!-- Wheat/grain top-left -->
+        <svg class="herb herb-tl" viewBox="0 0 180 250" xmlns="http://www.w3.org/2000/svg">
+          <g opacity=".13" stroke="#9A7520" fill="none" stroke-width="1">
+            <line x1="90" y1="240" x2="90" y2="40"/>
+            <ellipse cx="90" cy="80" rx="22" ry="35" fill="#B8960A" opacity=".2"/>
+            <ellipse cx="70" cy="100" rx="18" ry="28" transform="rotate(-20 70 100)" fill="#B8960A" opacity=".18"/>
+            <ellipse cx="110" cy="100" rx="18" ry="28" transform="rotate(20 110 100)" fill="#B8960A" opacity=".18"/>
+            <ellipse cx="60" cy="130" rx="15" ry="24" transform="rotate(-30 60 130)" fill="#B8960A" opacity=".15"/>
+            <ellipse cx="120" cy="130" rx="15" ry="24" transform="rotate(30 120 130)" fill="#B8960A" opacity=".15"/>
+          </g>
+        </svg>
+        <!-- Small dots / grain pattern -->
+        <svg class="herb herb-dots" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+          <g opacity=".1" fill="#8B6914">
+            <circle cx="20" cy="20" r="3"/><circle cx="60" cy="10" r="2"/><circle cx="100" cy="25" r="3"/>
+            <circle cx="140" cy="8" r="2"/><circle cx="180" cy="22" r="3"/><circle cx="220" cy="12" r="2"/>
+            <circle cx="260" cy="28" r="3"/><circle cx="300" cy="14" r="2"/><circle cx="340" cy="24" r="3"/>
+            <circle cx="380" cy="8" r="2"/><circle cx="40" cy="50" r="2"/><circle cx="80" cy="45" r="3"/>
+            <circle cx="320" cy="60" r="2"/><circle cx="360" cy="48" r="3"/>
+          </g>
+        </svg>
+      </div>
+
+      <!-- Hero Content Row -->
+      <div class="home-hero-inner">
+
+        <!-- LEFT: Floating White Hero Card (FSSAI-style) -->
+        <div class="home-hero-card">
+          <div class="home-hero-card-badge">
+            DEPARTMENT OF CONSUMER AFFAIRS · GOVT. OF INDIA
+          </div>
+          <h1 class="home-hero-heading">
+            Digital Enforcement:<br>Safeguarding
+          </h1>
+          <h2 class="home-hero-subheading">
+            Consumer Rights &amp; Metrology Compliance
+          </h2>
+          <div class="home-hero-divider"></div>
+          <p class="home-hero-desc">
+            Verify packaged commodity labels, check mandatory declarations, and enforce Legal Metrology (Packaged Commodities) Rules, 2011 (Amended 2026) — digitally, swiftly, and officially.
+          </p>
+
+          <!-- Login form embedded inside hero card -->
+          <div class="home-login-box">
+            <div class="home-login-title">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle; margin-right:4px;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              Inspector Secure Login
+            </div>
+
+            <!-- 1-Click Jury Access -->
+            <div class="home-demo-strip">
+              <div class="home-demo-info">
+                <div class="home-demo-avatar">RS</div>
+                <div>
+                  <div class="home-demo-name">Sh. Rajesh Sharma</div>
+                  <div class="home-demo-role">Senior Inspector · Delhi Central</div>
+                </div>
+              </div>
+              <button id="btn-demo-login" class="home-demo-btn">
+                Instant Officer Access
+              </button>
+            </div>
+
+            <div class="home-or-row"><span>OR</span></div>
+
+            <form id="login-form">
+              <div class="home-form-row">
+                <label for="officer-id">Officer ID / Email</label>
+                <input type="text" id="officer-id" value="rajesh.sharma@doca.gov.in" placeholder="officer@doca.gov.in">
+              </div>
+              <div class="home-form-row">
+                <label for="officer-pass">Password</label>
+                <input type="password" id="officer-pass" value="Inspector@2026" placeholder="••••••••">
+              </div>
+              <div class="home-form-row">
+                <label for="officer-zone">Zone</label>
+                <select id="officer-zone">
+                  <option>Delhi — Central Enforcement Zone</option>
+                  <option>Maharashtra — Zone 1 (Mumbai HQ)</option>
+                  <option>Karnataka — Bengaluru Urban Zone</option>
+                  <option>Uttar Pradesh — West Zone</option>
+                  <option>Tamil Nadu — Chennai Zone</option>
+                </select>
+              </div>
+              <button type="submit" class="home-login-btn">
+                Access Inspector Portal →
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- RIGHT: Compliance Infographic — "7 Key Declarations" (like FSSAI's 15 Key Areas) -->
+        <div class="home-infographic" aria-label="7 Key Legal Metrology Declarations">
+
+          <!-- DoCA / Legal Metrology Official Seal -->
+          <div class="home-doca-logo-block">
+            <div class="home-doca-emblem-wrap">
+              <img src="emblem_clean.png" alt="State Emblem of India | भारत का राज्य प्रतीक" class="home-doca-emblem-img" width="44" height="54">
+            </div>
+            <div>
+              <div class="home-doca-name">LEGAL METROLOGY DIVISION</div>
+              <div class="home-doca-sub">Department of Consumer Affairs</div>
+              <div class="home-doca-tagline">Ministry of Consumer Affairs, Food &amp; Public Distribution · Govt. of India</div>
+            </div>
+          </div>
+
+          <!-- Key Count Label -->
+          <div class="home-key-label">
+            <span class="home-key-num">7</span>
+            <span class="home-key-text">KEY<br>DECLARATIONS</span>
+          </div>
+
+          <!-- Coloured Arrow Bars (like FSSAI's 15 Key Areas diagram) -->
+          <div class="home-arrows">
+            <div class="home-arrow-item" style="--clr:#1D7A3A; --w:44%">
+              <div class="arrow-bar"><div class="arrow-head"></div></div>
+              <div class="arrow-label">Manufacturer Address with PIN</div>
+            </div>
+            <div class="home-arrow-item" style="--clr:#2563EB; --w:40%">
+              <div class="arrow-bar"><div class="arrow-head"></div></div>
+              <div class="arrow-label">Generic Name of Commodity</div>
+            </div>
+            <div class="home-arrow-item" style="--clr:#7C3AED; --w:36%">
+              <div class="arrow-bar"><div class="arrow-head"></div></div>
+              <div class="arrow-label">Net Quantity in Legal Units</div>
+            </div>
+            <div class="home-arrow-item" style="--clr:#D97706; --w:32%">
+              <div class="arrow-bar"><div class="arrow-head"></div></div>
+              <div class="arrow-label">MRP + Unit Sale Price (USP)</div>
+            </div>
+            <div class="home-arrow-item" style="--clr:#DC2626; --w:28%">
+              <div class="arrow-bar"><div class="arrow-head"></div></div>
+              <div class="arrow-label">Month &amp; Year of Manufacture</div>
+            </div>
+            <div class="home-arrow-item" style="--clr:#0891B2; --w:24%">
+              <div class="arrow-bar"><div class="arrow-head"></div></div>
+              <div class="arrow-label">Consumer Care Email &amp; Phone</div>
+            </div>
+            <div class="home-arrow-item" style="--clr:#65A30D; --w:20%">
+              <div class="arrow-bar"><div class="arrow-head"></div></div>
+              <div class="arrow-label">Country of Origin</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Quick Services Row (below hero, like FSSAI's icon grid) ── -->
+    <section class="home-services" aria-label="Quick Services">
+      <div class="home-services-inner">
+
+        <div class="home-service-card" onclick="document.getElementById('btn-demo-login').click()">
+          <div class="service-icon" style="background:#E6F4F4; color:#004F4F;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="2"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
+          <div class="service-title">Inspect a Product</div>
+          <div class="service-desc">Upload label &amp; run compliance check against 2026 rules</div>
+        </div>
+
+
+        <div class="home-service-card" onclick="document.getElementById('btn-demo-login').click()">
+          <div class="service-icon" style="background:#F0FDF4; color:#1D7A3A;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div class="service-title">Compliance Reports</div>
+          <div class="service-desc">Generate official inspection PDF with digital signature</div>
+        </div>
+
+        <div class="home-service-card" onclick="document.getElementById('btn-demo-login').click()">
+          <div class="service-icon" style="background:#EFF6FF; color:#1D4ED8;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+          </div>
+          <div class="service-title">Re-verify Products</div>
+          <div class="service-desc">Multi-cycle re-inspection with pre-filled product details</div>
+        </div>
+
+        <div class="home-service-card" onclick="document.getElementById('btn-demo-login').click()">
+          <div class="service-icon" style="background:#FEF2F2; color:#B91C1C;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <div class="service-title">File a Complaint</div>
+          <div class="service-desc">Forward violation report to Central Enforcement Cell</div>
+        </div>
+
+        <div class="home-service-card" onclick="document.getElementById('btn-demo-login').click()">
+          <div class="service-icon" style="background:#FFFBEB; color:#D97706;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <div class="service-title">Case Repository</div>
+          <div class="service-desc">Browse past inspection cases and audit trail records</div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /view-login -->
+
+  <!-- ╔══════════════════════════════════════════════════════╗ -->
+  <!-- ║   INSPECTOR WORKSPACE  (Sidebar + Steps 1→2→3)     ║ -->
+  <!-- ╚══════════════════════════════════════════════════════╝ -->
+  <div id="view-workspace" style="display:none;">
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-bar">
+      <div class="breadcrumb-inner">
+        <a href="#">Home</a> <span>›</span>
+        <a href="#" id="bc-section">Inspection Desk</a> <span>›</span>
+        <span class="crumb-current" id="bc-current-step">Upload Product Files</span>
+      </div>
+    </div>
+
+
+    <!-- ════════════════════════════════════════════════════
+         WORKSPACE LAYOUT = LEFT SIDEBAR + MAIN CONTENT
+         ═══════════════════════════════════════════════════ -->
+    <div class="workspace-layout">
+
+      <!-- ╔═══════════════════════════════════════════════════╗ -->
+      <!-- ║  HUMAN-CRAFTED INSPECTOR WORKBENCH SIDEBAR         ║ -->
+      <!-- ╚═══════════════════════════════════════════════════╝ -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-unified-panel">
+
+          <!-- Section 1: Enforcement Tools -->
+          <div class="sb-group-label">Enforcement Desk</div>
+          <ul class="sb-nav-list">
+            <li class="sb-nav-item">
+              <a class="sidebar-nav-link sb-nav-link active" id="nav-inspection" onclick="window.portalApp && window.portalApp.showPage('inspection')">
+                <svg class="sb-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="m9 14 2 2 4-4"/></svg>
+                <span>Inspection Desk</span>
+              </a>
+            </li>
+
+            <li class="sb-nav-item" id="nav-item-verification">
+              <a class="sidebar-nav-link sb-nav-link" onclick="window.portalApp && window.portalApp.goToStep(1)">
+                <svg class="sb-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <span>Upload &amp; Verify</span>
+                <span class="collapse-arrow sb-collapse-arrow">›</span>
+              </a>
+              <ul class="sidebar-subnav sb-subnav open" id="sub-verification">
+                <li>
+                  <a class="sidebar-subnav-link sb-subnav-link" id="sub-step1" onclick="window.portalApp&&window.portalApp.goToStep(1)">
+                    <span class="sb-step-num">1</span>
+                    <span>Upload Product Files</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="sidebar-subnav-link sb-subnav-link" id="sub-step2" onclick="window.portalApp&&window.portalApp.goToStep(2)">
+                    <span class="sb-step-num">2</span>
+                    <span>Commodity Details</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="sidebar-subnav-link sb-subnav-link" id="sub-step3" onclick="window.portalApp&&window.portalApp.goToStep(3)">
+                    <span class="sb-step-num">3</span>
+                    <span>Result &amp; Report</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Test Samples with official badges -->
+            <li class="sb-nav-item">
+              <a class="sidebar-nav-link sb-nav-link sb-sample-link" onclick="window.portalApp && window.portalApp.loadSample('sample_01')">
+                <svg class="sb-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                <span class="sb-sample-title">FMCG Soap Pack</span>
+                <span class="sb-pill-badge fail">FAIL</span>
+              </a>
+            </li>
+            <li class="sb-nav-item">
+              <a class="sidebar-nav-link sb-nav-link sb-sample-link" onclick="window.portalApp && window.portalApp.loadSample('sample_03')">
+                <svg class="sb-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                <span class="sb-sample-title">Amul Ghee Pack</span>
+                <span class="sb-pill-badge pass">PASS</span>
+              </a>
+            </li>
+          </ul>
+
+          <div class="sb-divider"></div>
+
+          <!-- Section 2: Statutory Information -->
+          <div class="sb-group-label">Legal &amp; Statutory</div>
+          <ul class="sb-nav-list">
+            <li class="sb-nav-item">
+              <a class="sidebar-nav-link sb-nav-link" id="nav-about" onclick="window.portalApp && window.portalApp.showPage('about')">
+                <svg class="sb-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                <span>About Us (DoCA)</span>
+              </a>
+            </li>
+            <li class="sb-nav-item">
+              <a class="sidebar-nav-link sb-nav-link" id="nav-contact" onclick="window.portalApp && window.portalApp.showPage('contact')">
+                <svg class="sb-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <span>Contact &amp; Grievance</span>
+              </a>
+            </li>
+            <li class="sb-nav-item">
+              <a class="sidebar-nav-link sb-nav-link" href="javascript:void(0)">
+                <svg class="sb-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span>Amendments History</span>
+              </a>
+            </li>
+          </ul>
+
+          <div class="sb-divider"></div>
+
+          <!-- Section 3: Officer Status Block -->
+          <div class="sb-officer-box">
+            <div class="sb-officer-head">
+              <span class="sb-status-dot"></span>
+              <span class="sb-status-text">Inspector Online</span>
+            </div>
+            <div class="sb-officer-name">Sh. Rajesh Sharma</div>
+            <div class="sb-officer-meta">Central Enforcement · Delhi</div>
+            <div class="sb-session-stat">
+              <span>Today's Audits:</span>
+              <strong id="sidebar-session-count">0 checks</strong>
+            </div>
+          </div>
+
+          <!-- Section 4: Official Helpline Strip -->
+          <div class="sb-helpline-box">
+            <div class="sb-helpline-header">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span>National Consumer Helpline</span>
+            </div>
+            <div class="sb-helpline-num">1915</div>
+            <div class="sb-helpline-note">Ministry of Consumer Affairs · Toll-Free</div>
+          </div>
+
+        </div>
+      </aside><!-- /sidebar -->
+
+      <!-- ╔═══════════════════════════════════╗ -->
+      <!-- ║  MAIN CONTENT AREA               ║ -->
+      <!-- ╚═══════════════════════════════════╝ -->
+      <main class="main-content" id="main-content">
+
+        <!-- ════ INSPECTION DESK PAGE ════ -->
+        <div id="page-inspection">
+      <div class="stepper-wrap">
+        <div class="stepper-inner">
+          <div class="step-item active" id="step-nav-1">
+            <div class="step-circle">1</div>
+            <span class="step-label">Upload Files</span>
+          </div>
+          <div class="step-item" id="step-nav-2">
+            <div class="step-circle">2</div>
+            <span class="step-label">Product Details</span>
+          </div>
+          <div class="step-item" id="step-nav-3">
+            <div class="step-circle">3</div>
+            <span class="step-label">Result &amp; Action</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ────────────────────────── STEP 1 ────────────────────────── -->
+      <div id="step-1-container">
+        <div class="card-section">
+          <div class="card-section-header">
+            <div class="card-section-header-left">
+              <div class="card-icon-box orange">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+              </div>
+              <div>
+                <div class="card-section-title">Step 1 — Upload Product Files / Images</div>
+                <div class="card-section-subtitle">Drag-and-drop or click to upload front, back, or label images of the packaged commodity for compliance analysis.</div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+
+            <!-- Alert box (shown for errors, warnings, re-verify mode) -->
+            <div id="upload-alert" class="alert-box error" style="display:none;">
+              <span class="alert-box-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              </span>
+              <span id="upload-alert-text">Invalid file format detected.</span>
+            </div>
+
+            <!-- Drag-and-Drop Zone with Instant In-Box Photo/PDF Preview -->
+            <div id="dropzone" class="dropzone">
+              <!-- Default empty dropzone state -->
+              <div id="dropzone-default" class="dropzone-default">
+                <div class="dropzone-icon">
+                  <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="var(--fssai-teal)" stroke-width="1.6" style="margin: 0 auto 10px; display: block;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                </div>
+                <div class="dropzone-title">Drag &amp; drop product label images/files here, or click to browse</div>
+                <div class="dropzone-sub">Accept ONLY: PDF, JPG, PNG — all other formats will be rejected</div>
+                <div class="type-chips">
+                  <span class="type-chip">PDF</span>
+                  <span class="type-chip">JPG / JPEG</span>
+                  <span class="type-chip">PNG</span>
+                </div>
+              </div>
+
+              <!-- Uploaded file photo preview state inside dropzone -->
+              <div id="dropzone-preview" class="dropzone-preview" style="display:none;">
+                <div class="dropzone-preview-inner">
+                  <div class="dropzone-img-wrap" id="dropzone-img-wrap">
+                    <img id="dropzone-img-elem" src="" alt="Uploaded Product Label Photo" class="dropzone-preview-img">
+                    <div id="dropzone-pdf-badge" class="dropzone-pdf-badge" style="display:none;">
+                      <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                      <span class="dropzone-pdf-label">PDF Document Uploaded</span>
+                    </div>
+                  </div>
+                  <div class="dropzone-preview-meta">
+                    <div class="dropzone-preview-name" id="dropzone-preview-name">—</div>
+                    <div class="dropzone-preview-status">
+                      <span class="badge-dot-green"></span>
+                      <span id="dropzone-preview-size">—</span> · <span style="color:#047857; font-weight:700;">File Ready for Verification</span>
+                    </div>
+                    <div class="dropzone-replace-hint">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                      Click or drag to change / replace file
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <input type="file" id="file-input" style="display:none;" multiple accept=".pdf,.jpg,.jpeg,.png">
+            </div>
+
+            <!-- Selected Files List -->
+            <div id="selected-files-wrap" style="display:none; margin-top:16px;">
+              <div class="file-table-header">Selected Files for Verification</div>
+              <ul id="file-list" class="file-list"></ul>
+            </div>
+
+            <!-- Quick Sample Load Bar -->
+            <div class="sample-bar">
+              <div class="sample-bar-label">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+                Quick Load Pre-built Packaged Commodity Samples
+              </div>
+              <div class="sample-pills">
+                <button class="sample-pill" onclick="window.portalApp.loadSample('sample_01')">
+                  <span class="sample-status-pill fail">FAIL</span> Patanjali Dant Kanti 200g (Missing USP &amp; Font Height)
+                </button>
+                <button class="sample-pill" onclick="window.portalApp.loadSample('sample_02')">
+                  <span class="sample-status-pill fail">FAIL</span> Korean Face Serum Imported (Missing Origin, PIN)
+                </button>
+                <button class="sample-pill" onclick="window.portalApp.loadSample('sample_03')">
+                  <span class="sample-status-pill pass">PASS</span> Amul Pure Ghee 1L (Fully Compliant, 2026)
+                </button>
+              </div>
+            </div>
+
+            <div class="btn-row">
+              <button id="btn-continue-step1" class="btn btn-primary" disabled>
+                Continue to Product Details
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div><!-- /step-1 -->
+
+      <!-- ────────────────────────── STEP 2 ────────────────────────── -->
+      <div id="step-2-container" style="display:none;">
+        <div class="card-section">
+          <div class="card-section-header">
+            <div class="card-section-header-left">
+              <div class="card-icon-box">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              </div>
+              <div>
+                <div class="card-section-title">Step 2 — Enter Product Details</div>
+                <div class="card-section-subtitle">Mandatory metadata for official Legal Metrology inspection records. Fields are pre-filled if a sample was loaded.</div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <form id="product-form">
+              <div class="form-grid-2col">
+
+                <div class="form-field">
+                  <label for="p-name">Product Name <span class="required-star">*</span></label>
+                  <input type="text" id="p-name" placeholder="e.g. Patanjali Dant Kanti Toothpaste 200g" required>
+                </div>
+
+                <div class="form-field">
+                  <label for="p-category">Commodity Category <span class="required-star">*</span></label>
+                  <select id="p-category" required>
+                    <option value="">Select Category…</option>
+                    <option>FMCG / Personal Care</option>
+                    <option>Packaged Food &amp; Staples</option>
+                    <option>Cosmetics</option>
+                    <option>Beverages</option>
+                    <option>Household &amp; Cleaning</option>
+                    <option>Electronics &amp; Hardware</option>
+                  </select>
+                </div>
+
+                <div class="form-field">
+                  <label for="p-batch">Batch No. / Lot ID / Barcode <span class="required-star">*</span></label>
+                  <input type="text" id="p-batch" placeholder="e.g. PK-DK-2026-B81" required>
+                </div>
+
+                <div class="form-field">
+                  <label for="p-qty">Declared Net Quantity</label>
+                  <input type="text" id="p-qty" placeholder="e.g. 200 g or 1 L">
+                  <div class="field-hint">Must be in legal metric units per Rule 6(1)(c)</div>
+                </div>
+
+                <div class="form-field form-full">
+                  <label for="p-notes">Inspection Notes / Retail Location (Optional)</label>
+                  <textarea id="p-notes" placeholder="e.g. Collected during routine inspection from shelf at Modern Retail Supermarket, Connaught Place, New Delhi."></textarea>
+                </div>
+
+              </div>
+              <div class="btn-row">
+                <button type="button" id="btn-back-s1" class="btn btn-ghost">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+                  Back to Upload
+                </button>
+                <button type="submit" class="btn btn-primary btn-lg">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                  Submit for Verification
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div><!-- /step-2 -->
+
+      <!-- ────────────────────────── STEP 3 ────────────────────────── -->
+      <div id="step-3-container" style="display:none;">
+
+        <!-- ════ SECTION 1: VERIFICATION RESULTS & ACTION DESK (APPEARS FIRST) ════ -->
+        <div class="step3-results-section">
+
+          <!-- PASS / FAIL Result Banner -->
+          <div id="result-banner" class="result-banner pass">
+            <div class="result-left">
+              <div id="result-icon" class="result-icon">✓</div>
+              <div>
+                <div id="result-heading" class="result-heading">Verification Successful</div>
+                <div id="result-desc" class="result-desc">All mandatory declarations comply with Legal Metrology Rules, 2011 (Amended 2026).</div>
+              </div>
+            </div>
+            <div>
+              <!-- PASS: Download PDF button -->
+              <button id="btn-download-pass" class="btn btn-success" style="display:none;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download Report (PDF)
+              </button>
+            </div>
+          </div>
+
+          <!-- FAIL Action Bar -->
+          <div id="fail-action-bar" class="fail-action-bar" style="display:none;">
+            <div class="fail-bar-label">Non-Compliance Identified — Action Required</div>
+            <div class="fail-choices">
+              <button id="btn-send-complaint" class="btn btn-danger">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                Send Report to Government (Complaint)
+              </button>
+              <button id="btn-ignore" class="btn btn-ghost">Ignore (Archive Case)</button>
+              <button id="btn-print-fail" class="btn btn-outline">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                Print / Save PDF Notice
+              </button>
+            </div>
+            <!-- Inline confirmation toast (hidden by default) -->
+            <div id="inline-toast" class="inline-toast complaint" style="display:none;"></div>
+          </div>
+
+          <!-- Re-verify bar -->
+          <div class="reverify-bar">
+            <div class="reverify-text">
+              <strong>Re-verification Feature</strong>
+              Inspector can re-upload clearer photos or re-run inspection. All product details remain <em>pre-filled</em>.
+            </div>
+            <button id="btn-reverify" class="btn btn-orange">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+              Re-verify Product
+            </button>
+          </div>
+
+          <!-- Violations & Passed Declarations -->
+          <div class="result-columns" id="result-columns">
+
+            <!-- Violations Column -->
+            <div id="violations-wrap" class="violations-section" style="display:none;">
+              <div class="section-heading" style="color: var(--status-fail);">
+                <span>✕</span> Detected Violations
+              </div>
+              <div id="violations-list"></div>
+            </div>
+
+            <!-- Passed Column -->
+            <div id="passed-wrap" class="passed-section">
+              <div class="section-heading" style="color: var(--status-pass);">
+                <span>✓</span> Verified Declarations (Rule 6 Checklist)
+              </div>
+              <div id="passed-list" class="pass-checklist"></div>
+            </div>
+
+          </div>
+
+        </div><!-- /step3-results-section -->
+
+        <!-- ════ SECTION 2: OFFICIAL INSPECTION REPORT & PDF NOTICE (APPEARS AFTER) ════ -->
+        <div class="step3-pdf-section" id="step3-pdf-section">
+          
+          <div class="pdf-section-header">
+            <div class="pdf-section-header-left">
+              <span class="pdf-chip">OFFICIAL REPORT</span>
+              <div>
+                <div class="pdf-section-title">Official Inspection Report &amp; Notice (PDF Copy)</div>
+                <div class="pdf-section-sub">Generated legal metrology enforcement notice under Section 36, Legal Metrology Act, 2009</div>
+              </div>
+            </div>
+            <div class="pdf-section-header-actions">
+              <button type="button" id="btn-copy-download-pdf" class="btn btn-sm btn-primary" onclick="window.portalApp && window.portalApp.downloadReportPDF()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download Official PDF
+              </button>
+              <button type="button" class="btn btn-sm btn-outline" onclick="window.print()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                Print Notice
+              </button>
+            </div>
+          </div>
+
+          <!-- Official Report Embed (The actual document exported to PDF) -->
+          <div class="report-embed" id="official-report">
+            <div class="report-embed-header">
+              <div style="display: flex; align-items: center; gap: 14px;">
+                <div style="width: 44px; height: 44px; background: #FFF; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 1px 3px rgba(0,0,0,.15);">
+                  <img id="rep-govt-emblem" src="emblem_clean.png" alt="National Emblem of India" style="width: 28px; height: auto;">
+                </div>
+                <div>
+                  <div class="report-ministry-label">Government of India · Ministry of Consumer Affairs, Food &amp; Public Distribution</div>
+                  <div class="report-title-big">PACKAGED COMMODITY INSPECTION &amp; COMPLIANCE REPORT</div>
+                  <div class="report-sub-small">Issued under Legal Metrology Act, 2009 &amp; PCR Rules 2011 (Amended 2026) — Section 36</div>
+                </div>
+              </div>
+              <div class="report-meta-right">
+                <div class="report-case-num" id="rep-case-num">CASE-REF: LM-2026-XXXXX</div>
+                <div class="report-date-txt" id="rep-date">Date: —</div>
+              </div>
+            </div>
+            <div class="report-body">
+              <!-- Verdict Banner inside PDF -->
+              <div id="rep-verdict-banner" style="margin-bottom: 14px;"></div>
+
+              <!-- Product Dossier & Evidence Image Grid -->
+              <div class="report-dossier-grid" style="display: flex; gap: 12px; margin-bottom: 12px; align-items: stretch;">
+                <!-- Left: Evidence Label Photo Box -->
+                <div class="report-evidence-box" style="width: 135px; min-width: 120px; border: 1.5px solid #CBD5E1; border-radius: 6px; padding: 6px; background: #F8FAFC; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <div style="font-size: 9.5px; font-weight: 700; text-transform: uppercase; color: #0B2545; margin-bottom: 5px; letter-spacing: .5px;">
+                    Inspected Label
+                  </div>
+                  <div style="max-height: 105px; max-width: 120px; display: flex; align-items: center; justify-content: center; overflow: hidden; background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 4px; padding: 3px;">
+                    <img id="rep-evidence-img" src="" alt="Label Evidence" style="max-height: 95px; max-width: 114px; object-fit: contain;">
+                  </div>
+                  <div id="rep-evidence-filename" style="font-size: 8.5px; color: #64748B; margin-top: 4px; word-break: break-all; max-width: 120px; line-height: 1.2;">
+                    label_evidence.jpg
+                  </div>
+                </div>
+                <!-- Right: Commodity Inspection Details Table -->
+                <div style="flex: 1; min-width: 0;">
+                  <table class="report-table" style="height: 100%; margin-bottom: 0; width: 100%;">
+                    <tr>
+                      <td class="lbl">Commodity</td>
+                      <td id="rep-name" style="font-weight:700;">—</td>
+                      <td class="lbl">Category</td>
+                      <td id="rep-category">—</td>
+                    </tr>
+                    <tr>
+                      <td class="lbl">Batch / Barcode</td>
+                      <td id="rep-batch">—</td>
+                      <td class="lbl">Declared Net Qty</td>
+                      <td id="rep-qty">—</td>
+                    </tr>
+                    <tr>
+                      <td class="lbl">Inspecting Officer</td>
+                      <td id="rep-officer">Sh. Rajesh Sharma (Senior Inspector, Delhi Central)</td>
+                      <td class="lbl">Verdict</td>
+                      <td id="rep-status" style="font-weight:800;">—</td>
+                    </tr>
+                    <tr>
+                      <td class="lbl">Attempt</td>
+                      <td id="rep-attempt">—</td>
+                      <td class="lbl">Score</td>
+                      <td id="rep-score" style="font-weight:700;">—</td>
+                    </tr>
+                    <tr>
+                      <td class="lbl">Inspection Notes</td>
+                      <td id="rep-notes" colspan="3">—</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <!-- Dynamic Findings & Full Rule Checklist in Report -->
+              <div id="rep-findings-wrap" style="margin-top: 14px;"></div>
+
+              <div class="report-sign-row">
+                <div class="govt-seal">
+                  Department of Consumer Affairs<br>
+                  Legal Metrology Enforcement Cell
+                </div>
+                <div class="sign-block">
+                  <div class="sign-cursive">R. Sharma</div>
+                  <div class="sign-name">(Rajesh Sharma, LMO)</div>
+                  <div class="sign-role">Authorised Legal Metrology Officer · Central Enforcement Zone</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!-- /step3-pdf-section -->
+
+      </div><!-- /step-3 -->
+
+      </div><!-- /page-inspection -->
+
+      <!-- ════ ABOUT US PAGE ════ -->
+      <div id="page-about" style="display:none;">
+        <div class="about-page-hero">
+          <div class="about-page-hero-inner">
+            <div class="about-hero-eyebrow">Department of Consumer Affairs · Govt. of India</div>
+            <h2>About Legal Metrology<br>Inspector Portal</h2>
+            <p>A specialized digital enforcement workbench for Legal Metrology Officers under the Department of Consumer Affairs, Ministry of Consumer Affairs, Food &amp; Public Distribution — enabling automated compliance checking of packaged commodities under Legal Metrology (Packaged Commodities) Rules, 2011 (Amended 2026).</p>
+          </div>
+        </div>
+
+        <!-- Stats Row -->
+        <div class="about-stats-row">
+          <div class="about-stat-card">
+            <div class="about-stat-num">7</div>
+            <div class="about-stat-label">Mandatory Declarations (Rule 6)</div>
+          </div>
+          <div class="about-stat-card">
+            <div class="about-stat-num">5</div>
+            <div class="about-stat-label">Font Size Grades (Schedule II)</div>
+          </div>
+          <div class="about-stat-card">
+            <div class="about-stat-num">2026</div>
+            <div class="about-stat-label">Latest Amendment Applied</div>
+          </div>
+          <div class="about-stat-card">
+            <div class="about-stat-num">∞</div>
+            <div class="about-stat-label">Re-verifications Allowed</div>
+          </div>
+        </div>
+
+        <!-- Rules Highlight -->
+        <div class="rules-highlight-box">
+          <div class="rules-highlight-title">Laws &amp; Rules Enforced by This Portal</div>
+          <div class="rules-tag-row">
+            <span class="rules-tag">Legal Metrology Act, 2009</span>
+            <span class="rules-tag">PCR Rules, 2011</span>
+            <span class="rules-tag">2024 USP Amendment</span>
+            <span class="rules-tag">2026 Font Height Update</span>
+            <span class="rules-tag">Rule 6 — Mandatory Declarations</span>
+            <span class="rules-tag">Rule 9 &amp; Schedule II</span>
+            <span class="rules-tag">Section 36 Penalty Provisions</span>
+          </div>
+        </div>
+
+        <!-- About Grid -->
+        <div class="about-grid">
+          <div class="about-info-card">
+            <div class="about-info-card-title">Our Mission</div>
+            <p>To ensure complete transparency and consumer protection in the packaged goods market through systematic, rule-based digital enforcement of Legal Metrology (Packaged Commodities) Rules — enabling swift identification and action against non-compliant declarations.</p>
+            <ul class="about-list">
+              <li><div class="about-list-dot"></div>Automated label compliance checking via AI &amp; Rule Engine</li>
+              <li><div class="about-list-dot"></div>Enforcement of 2026 USP (Unit Sale Price) mandate</li>
+              <li><div class="about-list-dot"></div>Multi-cycle inspector re-verification with complete audit trail</li>
+              <li><div class="about-list-dot"></div>Official PDF Show-Cause Notice / Seizure Memo generation</li>
+            </ul>
+          </div>
+          <div class="about-info-card">
+            <div class="about-info-card-title">System Features</div>
+            <p>This portal provides a comprehensive enforcement workbench for Legal Metrology Officers at all levels of the Department of Consumer Affairs, functioning across all 28 states and 8 UTs.</p>
+            <ul class="about-list">
+              <li><div class="about-list-dot"></div>Officer secure login with jurisdiction-based access control</li>
+              <li><div class="about-list-dot"></div>Step-by-step product upload &amp; verification wizard</li>
+              <li><div class="about-list-dot"></div>Real-time Rule 6 &amp; Rule 9 compliance evaluation</li>
+              <li><div class="about-list-dot"></div>Inline complaint forwarding to Central Enforcement Cell</li>
+              <li><div class="about-list-dot"></div>Print-ready official inspection reports &amp; notices</li>
+            </ul>
+          </div>
+          <div class="about-info-card">
+            <div class="about-info-card-title">Legal Framework</div>
+            <p>All compliance checks are conducted strictly under:</p>
+            <ul class="about-list">
+              <li><div class="about-list-dot"></div><strong>Legal Metrology Act, 2009</strong> — Section 36, 30</li>
+              <li><div class="about-list-dot"></div><strong>PCR Rules, 2011</strong> — Rule 6, Rule 9, Schedule II</li>
+              <li><div class="about-list-dot"></div>Amendment: <strong>Unit Sale Price (USP)</strong> — 2024 notification</li>
+              <li><div class="about-list-dot"></div>Amendment: <strong>Country of Origin</strong> mandate — 2023</li>
+              <li><div class="about-list-dot"></div>Amendment: <strong>Complete PIN Code address</strong> — 2022</li>
+            </ul>
+          </div>
+          <div class="about-info-card">
+            <div class="about-info-card-title">About DoCA</div>
+            <p>The <strong>Department of Consumer Affairs (DoCA)</strong> under the Ministry of Consumer Affairs, Food &amp; Public Distribution, Government of India is the nodal department responsible for implementation of Legal Metrology Acts and consumer protection laws across India.</p>
+            <ul class="about-list">
+              <li><div class="about-list-dot"></div>Headquarters: Krishi Bhawan, New Delhi — 110 001</div></li>
+              <li><div class="about-list-dot"></div>Website: consumeraffairs.nic.in</li>
+              <li><div class="about-list-dot"></div>National Consumer Helpline: <strong>1915</strong></li>
+              <li><div class="about-list-dot"></div>WhatsApp: <strong>8800001915</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Team / Officers -->
+        <div class="about-info-card" style="margin-bottom:22px;">
+          <div class="about-info-card-title">Sample Enforcement Team (Demo)</div>
+          <div class="team-grid" style="margin-top:14px;">
+            <div class="team-card">
+              <div class="team-avatar" style="background:var(--fssai-teal-dark);">RS</div>
+              <div class="team-name">Sh. Rajesh Sharma</div>
+              <div class="team-desig">Senior Legal Metrology Inspector</div>
+              <div class="team-zone">Delhi — Central Enforcement Zone</div>
+            </div>
+            <div class="team-card">
+              <div class="team-avatar" style="background:var(--gov-navy);">AP</div>
+              <div class="team-name">Smt. Anita Patel</div>
+              <div class="team-desig">Legal Metrology Officer (LMO)</div>
+              <div class="team-zone">Maharashtra — Zone 1 (Mumbai HQ)</div>
+            </div>
+            <div class="team-card">
+              <div class="team-avatar" style="background:var(--fssai-orange);">RK</div>
+              <div class="team-name">Sh. Ramesh Kumar</div>
+              <div class="team-desig">Enforcement Inspector</div>
+              <div class="team-zone">Karnataka — Bengaluru Urban Zone</div>
+            </div>
+          </div>
+        </div>
+      </div><!-- /page-about -->
+
+      <!-- ════ CONTACT US PAGE ════ -->
+      <div id="page-contact" style="display:none;">
+        <div class="contact-page-hero">
+          <h2>Contact Us</h2>
+          <p>Reach out to the Department of Consumer Affairs, Legal Metrology Enforcement Cell for official correspondence, technical support, and consumer grievances.</p>
+        </div>
+
+        <!-- Helpline Banner -->
+        <div class="contact-helpline-banner">
+          <div class="helpline-banner-left">
+            <h3>National Consumer Helpline</h3>
+            <p>Free · 24×7 · Available in 10+ languages · Connected to INGRAM Portal</p>
+          </div>
+          <div class="helpline-numbers">
+            <div class="helpline-num-card">
+              <div class="helpline-num-big">1915</div>
+              <div class="helpline-num-label">Toll-Free Helpline</div>
+            </div>
+            <div class="helpline-num-card">
+              <div class="helpline-num-big">8800001915</div>
+              <div class="helpline-num-label">WhatsApp Helpline</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Info Grid -->
+        <div class="contact-grid">
+          <div class="contact-info-card">
+            <div class="contact-info-head">Head Office — DoCA</div>
+            <div class="contact-detail-row">
+              <div class="contact-detail-icon">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <div class="contact-detail-label">Postal Address</div>
+                <div class="contact-detail-value">Department of Consumer Affairs<br>Ministry of Consumer Affairs, Food &amp; Public Distribution<br>Krishi Bhawan, Dr. Rajendra Prasad Road<br>New Delhi — 110 001</div>
+              </div>
+            </div>
+            <div class="contact-detail-row">
+              <div class="contact-detail-icon">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <div class="contact-detail-label">Office Telephone</div>
+                <div class="contact-detail-value">+91-11-23070637 / 23387263</div>
+              </div>
+            </div>
+            <div class="contact-detail-row">
+              <div class="contact-detail-icon">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </div>
+              <div>
+                <div class="contact-detail-label">Official Email</div>
+                <div class="contact-detail-value"><a href="mailto:secy-ca@nic.in">secy-ca@nic.in</a></div>
+              </div>
+            </div>
+            <div class="contact-detail-row">
+              <div class="contact-detail-icon">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </div>
+              <div>
+                <div class="contact-detail-label">Website</div>
+                <div class="contact-detail-value"><a href="https://consumeraffairs.nic.in" target="_blank">consumeraffairs.nic.in</a></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-info-card">
+            <div class="contact-info-head">Legal Metrology Division</div>
+            <div class="contact-detail-row">
+              <div class="contact-detail-icon">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </div>
+              <div>
+                <div class="contact-detail-label">Controller of Legal Metrology</div>
+                <div class="contact-detail-value">Dr. (Name), IAS<br>Legal Metrology Division, DoCA</div>
+              </div>
+            </div>
+            <div class="contact-detail-row">
+              <div class="contact-detail-icon">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <div class="contact-detail-label">LM Division Helpline</div>
+                <div class="contact-detail-value">+91-11-23381899</div>
+              </div>
+            </div>
+            <div class="contact-detail-row">
+              <div class="contact-detail-icon">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </div>
+              <div>
+                <div class="contact-detail-label">Email (Enforcement)</div>
+                <div class="contact-detail-value"><a href="mailto:lm-enforce@doca.gov.in">lm-enforce@doca.gov.in</a></div>
+              </div>
+            </div>
+            <div class="contact-detail-row">
+              <div class="contact-detail-icon">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <div class="contact-detail-label">Office Hours</div>
+                <div class="contact-detail-value">Monday – Friday: 9:30 AM to 6:00 PM (IST)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-card">
+          <div class="contact-form-title">Send Us a Message / Grievance</div>
+          <form id="contact-form" onsubmit="return false;">
+            <div class="contact-form-grid">
+              <div>
+                <label class="contact-form-label" for="cf-name">Full Name <span style="color:var(--status-fail)">*</span></label>
+                <input type="text" id="cf-name" class="contact-form-input" placeholder="e.g. Sh. Ravi Kumar" required>
+              </div>
+              <div>
+                <label class="contact-form-label" for="cf-email">Email Address <span style="color:var(--status-fail)">*</span></label>
+                <input type="email" id="cf-email" class="contact-form-input" placeholder="e.g. officer@gov.in" required>
+              </div>
+              <div>
+                <label class="contact-form-label" for="cf-phone">Phone Number</label>
+                <input type="tel" id="cf-phone" class="contact-form-input" placeholder="e.g. +91-98XXXXXXXX">
+              </div>
+              <div>
+                <label class="contact-form-label" for="cf-subject">Subject <span style="color:var(--status-fail)">*</span></label>
+                <select id="cf-subject" class="contact-form-select">
+                  <option value="">Select Subject…</option>
+                  <option>Technical Issue with Portal</option>
+                  <option>Violation Report / Consumer Complaint</option>
+                  <option>PCR Rules 2026 Clarification</option>
+                  <option>Request for Inspection</option>
+                  <option>Other Official Correspondence</option>
+                </select>
+              </div>
+              <div class="contact-form-full">
+                <label class="contact-form-label" for="cf-message">Message / Details <span style="color:var(--status-fail)">*</span></label>
+                <textarea id="cf-message" class="contact-form-textarea" placeholder="Please describe your query, grievance, or issue in detail..." required></textarea>
+              </div>
+            </div>
+            <button type="button" id="btn-send-contact" class="btn btn-primary btn-lg">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              Send Message
+            </button>
+            <div id="contact-success-toast" class="contact-success-toast">
+              Your message has been submitted successfully. A reference number will be sent to your email within 24 hours. Thank you.
+            </div>
+          </form>
+        </div>
+
+        <!-- State Offices -->
+        <div class="about-info-card">
+          <div class="about-info-card-title">State Legal Metrology Controllers</div>
+          <table class="state-offices-table">
+            <thead>
+              <tr>
+                <th>State / UT</th>
+                <th>Controller Name</th>
+                <th>Office City</th>
+                <th>Phone</th>
+                <th>Email</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Delhi (NCT)</td>
+                <td>Sh. Manish Gupta</td>
+                <td>New Delhi</td>
+                <td>011-23456789</td>
+                <td>lm.delhi@gov.in</td>
+              </tr>
+              <tr>
+                <td>Maharashtra</td>
+                <td>Smt. Priya Desai</td>
+                <td>Mumbai</td>
+                <td>022-23456789</td>
+                <td>lm.maha@gov.in</td>
+              </tr>
+              <tr>
+                <td>Karnataka</td>
+                <td>Sh. S. Ramaiah</td>
+                <td>Bengaluru</td>
+                <td>080-23456789</td>
+                <td>lm.karnataka@gov.in</td>
+              </tr>
+              <tr>
+                <td>Uttar Pradesh</td>
+                <td>Sh. Ram Chandra</td>
+                <td>Lucknow</td>
+                <td>0522-23456789</td>
+                <td>lm.up@gov.in</td>
+              </tr>
+              <tr>
+                <td>Tamil Nadu</td>
+                <td>Smt. S. Lakshminarayan</td>
+                <td>Chennai</td>
+                <td>044-23456789</td>
+                <td>lm.tn@gov.in</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div><!-- /page-contact -->
+
+      </main><!-- /main-content -->
+    </div><!-- /workspace-layout -->
+  </div><!-- /view-workspace -->
+
+  <!-- ╔══════════════════════════════════════════════════════╗ -->
+  <!-- ║  GAZETTE MODAL — 2026 Amendment Quick Reference     ║ -->
+  <!-- ╚══════════════════════════════════════════════════════╝ -->
+  <div id="modal-gazette" class="modal-overlay" style="display:none;" role="dialog" aria-modal="true" aria-label="2026 Rules Gazette">
+    <div class="modal-box">
+      <div class="modal-head">
+        <div class="modal-head-title">Legal Metrology (PCR) Rules 2011 — 2024-2026 Amendments Quick Reference</div>
+        <button id="btn-close-gazette" class="modal-close" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>The Department of Consumer Affairs has notified comprehensive amendments to prevent shrinkflation, ensure full pricing transparency, and protect consumers from misleading declarations.</p>
+
+        <div class="modal-section-title">1. Unit Sale Price (USP) — Rule 6(1)(e) [2024 Amendment]</div>
+        <p>Every packaged commodity must declare a <strong>Unit Sale Price (USP)</strong> printed prominently on the package alongside MRP:<br>
+        • If net quantity is <strong>above 1 kg / 1 Litre</strong>: declare price per <strong>kg</strong> or per <strong>Litre</strong>.<br>
+        • If net quantity is <strong>below 1 kg / 1 Litre</strong>: declare price per <strong>gram (g)</strong> or per <strong>millilitre (ml)</strong>.<br>
+        Rounded to two decimal places. Non-declaration is punishable under Section 36(1).</p>
+
+        <div class="modal-section-title">2. Minimum Numeral Height — Rule 9 &amp; Schedule II</div>
+        <table class="rules-table">
+          <thead>
+            <tr>
+              <th>Principal Display Area</th>
+              <th>Net Quantity Range</th>
+              <th>Min. Height (Normal Print)</th>
+              <th>Min. Height (Moulded)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Upto 50 sq.cm</td><td>Upto 50 g / ml</td><td>1.0 mm</td><td>2.0 mm</td></tr>
+            <tr><td>50 – 100 sq.cm</td><td>50g – 100 g/ml</td><td>1.5 mm</td><td>3.0 mm</td></tr>
+            <tr><td>100 – 500 sq.cm</td><td>100g – 500 g/ml</td><td>2.0 mm</td><td>4.0 mm</td></tr>
+            <tr><td>500 – 2500 sq.cm</td><td>500g – 1 kg / L</td><td>4.0 mm</td><td>6.0 mm</td></tr>
+            <tr><td>Above 2500 sq.cm</td><td>Above 1 kg / L</td><td>6.0 mm</td><td>6.0 mm</td></tr>
+          </tbody>
+        </table>
+
+        <div class="modal-section-title">3. Complete Address with PIN Code — Rule 6(1)(a)</div>
+        <p>The address of manufacturer / packer / importer must state complete postal address including street/locality, city/district, state, and <strong>6-digit Postal PIN Code</strong>. Mentioning mere city name is non-compliant and punishable under Section 36(1) of the Legal Metrology Act, 2009.</p>
+
+        <div class="modal-section-title">4. Digital Consumer Care Details — Rule 6(1)(f)</div>
+        <p>Consumer care information must include: <strong>Name/Designation</strong> of contact officer, <strong>complete postal address</strong>, <strong>toll-free / helpline telephone number</strong>, and a <strong>valid email ID</strong>. Omission of email is a violation as per 2024 Amendment.</p>
+
+        <div class="modal-section-title">5. Country of Origin — Rule 6(1)(g) &amp; 6(10)</div>
+        <p>Mandatory for <strong>all</strong> packaged commodities (domestic and imported). For imported goods, the name and address of the Indian importer must also be declared on the physical package label. This declaration must be physically printed — hiding it only in a QR code is not acceptable.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ╔══════════════════════════════════════════════════════╗ -->
+  <!-- ║  ABOUT US MODAL — Statutory Mandate & Department   ║ -->
+  <!-- ╚══════════════════════════════════════════════════════╝ -->
+  <div id="modal-about-us" class="modal-overlay" style="display:none;" role="dialog" aria-modal="true" aria-label="About Us — Legal Metrology Division">
+    <div class="modal-box modal-about-box">
+      <div class="modal-head">
+        <div class="modal-head-title">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle; margin-right:6px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          About Us — Legal Metrology Division (DoCA)
+        </div>
+        <button id="btn-close-about-us" class="modal-close" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        
+        <div class="about-hero-badge">Department of Consumer Affairs · Ministry of Consumer Affairs, Food &amp; Public Distribution</div>
+        <h3 class="about-main-title">Enforcing Fair Trade, Accurate Measures &amp; Consumer Trust</h3>
+        <p>The <strong>Legal Metrology Division</strong> operates under the Department of Consumer Affairs, Government of India. It exercises regulatory and statutory control over all weights, measures, weighing and measuring instruments, and packaged commodities manufactured, packed, imported, or distributed across the country.</p>
+
+        <div class="modal-section-title">1. Statutory Framework: Legal Metrology Act, 2009</div>
+        <p>The <strong>Legal Metrology Act, 2009 (Act No. 1 of 2010)</strong> was enacted by Parliament to establish and enforce standards of weights and measures, regulate trade and commerce in weights, measures, and other goods which are sold or distributed by weight, measure, or number, and for matters connected therewith. The primary objective is to safeguard consumers against short measurement, incorrect labeling, and deceptive packaging practices.</p>
+
+        <div class="modal-section-title">2. Packaged Commodities Rules (PCR), 2011 &amp; 2024–2026 Amendments</div>
+        <p>Under Section 52(2)(j) and Section 18 of the Act, the Central Government framed the <strong>Legal Metrology (Packaged Commodities) Rules, 2011</strong>. These rules govern every pre-packaged commodity sold or exhibited for sale. The 2024–2026 amendments introduce stringent reforms:</p>
+        <ul class="about-bullets">
+          <li><strong>Mandatory Unit Sale Price (USP):</strong> Rule 6(1)(e) requires every pre-packaged commodity to declare its price per standard unit (per kg/Litre or per g/ml) alongside the MRP to eliminate deceptive packaging and shrinkflation.</li>
+          <li><strong>Standardized Numeral &amp; Letter Height:</strong> Rule 9 (Schedule II) mandates minimum font heights based on Principal Display Area (PDA) to ensure consumers can clearly read all declarations without magnification.</li>
+          <li><strong>Complete Postal PIN Code:</strong> Rule 6(1)(a) makes omission of the 6-digit PIN code an actionable offense under Section 36(1).</li>
+          <li><strong>Digital Consumer Care Identity:</strong> Mandatory inclusion of telephone helpline, postal address, and active electronic mail address under Rule 6(1)(f).</li>
+          <li><strong>Country of Origin on Physical Packaging:</strong> Rule 6(1)(g) and Rule 6(10) prohibit hiding origin declarations solely behind digital QR codes.</li>
+        </ul>
+
+        <div class="modal-section-title">3. Institutional Enforcement Hierarchy</div>
+        <div class="about-hierarchy-grid">
+          <div class="hierarchy-card">
+            <div class="hier-role">Director of Legal Metrology</div>
+            <div class="hier-scope">Central Government · Policy, Central Rules, Interstate Trade &amp; National Standardization</div>
+          </div>
+          <div class="hierarchy-card">
+            <div class="hier-role">Controllers of Legal Metrology</div>
+            <div class="hier-scope">State / UT Governments · Enforcement Head in respective State jurisdictions</div>
+          </div>
+          <div class="hierarchy-card">
+            <div class="hier-role">Senior Inspectors &amp; LMOs</div>
+            <div class="hier-scope">Field Enforcement · Market inspections, sampling, compounding, and prosecution</div>
+          </div>
+        </div>
+
+        <div class="modal-section-title">4. Penalties &amp; Offenses</div>
+        <p>Violations of packaged commodity declarations attract penalties under <strong>Section 36(1)</strong> of the Legal Metrology Act, 2009 — punishable with fine up to &#8377;25,000 for first offense, up to &#8377;50,000 for second offense, and up to &#8377;1,00,000 or imprisonment for subsequent offenses.</p>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ╔══════════════════════════════════════════════════════╗ -->
+  <!-- ║  CONTACT US MODAL — Helplines, Office & Form       ║ -->
+  <!-- ╚══════════════════════════════════════════════════════╝ -->
+  <div id="modal-contact-us" class="modal-overlay" style="display:none;" role="dialog" aria-modal="true" aria-label="Contact Us — Legal Metrology & DoCA">
+    <div class="modal-box modal-contact-box">
+      <div class="modal-head">
+        <div class="modal-head-title">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle; margin-right:6px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Contact Us — Legal Metrology &amp; Consumer Affairs
+        </div>
+        <button id="btn-close-contact-us" class="modal-close" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+
+        <!-- Helplines Strip -->
+        <div class="contact-channels-grid">
+          <div class="contact-channel-item">
+            <div class="channel-icon-pill" style="background:#E6F4F4; color:#004F4F;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <div class="channel-title">National Consumer Helpline (NCH)</div>
+              <div class="channel-val">1915 / 1800-11-4000</div>
+              <div class="channel-meta">Toll-Free · 24x7 all days</div>
+            </div>
+          </div>
+
+          <div class="contact-channel-item">
+            <div class="channel-icon-pill" style="background:#F0FDF4; color:#1D7A3A;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </div>
+            <div>
+              <div class="channel-title">WhatsApp Grievance Desk</div>
+              <div class="channel-val">+91 88000 01915</div>
+              <div class="channel-meta">Instant grievance registration</div>
+            </div>
+          </div>
+
+          <div class="contact-channel-item">
+            <div class="channel-icon-pill" style="background:#EFF6FF; color:#1D4ED8;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div class="channel-title">Central Enforcement Cell</div>
+              <div class="channel-val">enforcement-lm@doca.gov.in</div>
+              <div class="channel-meta">For official notices &amp; references</div>
+            </div>
+          </div>
+
+          <div class="contact-channel-item">
+            <div class="channel-icon-pill" style="background:#FFF3ED; color:#B45309;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="channel-title">Department Headquarters</div>
+              <div class="channel-val">Krishi Bhawan, New Delhi</div>
+              <div class="channel-meta">Dr. Rajendra Prasad Road, ND - 110001</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-section-title">Send Official Inquiry or Feedback</div>
+        <form id="contact-form-modal" onsubmit="event.preventDefault(); document.getElementById('contact-modal-toast').style.display='flex';">
+          <div class="contact-form-grid">
+            <div>
+              <label class="contact-form-label">Officer / Citizen Name</label>
+              <input type="text" class="contact-form-input" required placeholder="Sh. Rajesh Sharma" value="Sh. Rajesh Sharma">
+            </div>
+            <div>
+              <label class="contact-form-label">Email Address</label>
+              <input type="email" class="contact-form-input" required placeholder="officer@doca.gov.in" value="rajesh.sharma@doca.gov.in">
+            </div>
+            <div>
+              <label class="contact-form-label">Zone / State</label>
+              <select class="contact-form-select">
+                <option>Delhi Central Enforcement Zone</option>
+                <option>Maharashtra (Zone 1 - Mumbai HQ)</option>
+                <option>Karnataka (Bengaluru Urban)</option>
+                <option>Uttar Pradesh (West Zone)</option>
+                <option>Tamil Nadu (Chennai Zone)</option>
+              </select>
+            </div>
+            <div>
+              <label class="contact-form-label">Subject / Query Type</label>
+              <select class="contact-form-select">
+                <option>PCR 2026 Rules Clarification</option>
+                <option>Unit Sale Price (USP) Calculation Inquiry</option>
+                <option>Show-Cause Notice Status</option>
+                <option>Technical Support / Inspector Access</option>
+              </select>
+            </div>
+            <div class="contact-form-full">
+              <label class="contact-form-label">Message / Details</label>
+              <textarea class="contact-form-textarea" rows="3" placeholder="Enter inquiry or violation details for Central Legal Metrology Cell..."></textarea>
+            </div>
+          </div>
+          <button type="submit" class="contact-submit-btn">Send Official Dispatch &rarr;</button>
+          <div id="contact-modal-toast" class="contact-success-toast" style="display:none; margin-top:12px;">
+            &#10003; Message dispatched to Central Enforcement Cell. Reference No: <strong>DoCA/INQ/2026/7482</strong>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ╔═══════════════════════════════════════════════╗ -->
+  <!-- ║  FOOTER  (FSSAI-inspired dark teal + links)  ║ -->
+  <!-- ╚═══════════════════════════════════════════════╝ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand-text">Legal Metrology Inspector Portal</div>
+          <p class="footer-desc">An official Digital Enforcement Platform under the Department of Consumer Affairs for compliance checking of packaged commodities under Legal Metrology Act, 2009 and PCR Rules, 2011 (Amended 2026).</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Quick Links</div>
+          <ul class="footer-links">
+            <li><a href="javascript:void(0)">LM Act, 2009</a></li>
+            <li><a href="javascript:void(0)">PCR Rules, 2011</a></li>
+            <li><a href="javascript:void(0)">2024-26 Amendments</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Enforcement</div>
+          <ul class="footer-links">
+            <li><a href="javascript:void(0)">State Controllers</a></li>
+            <li><a href="javascript:void(0)">Inspection Circulars</a></li>
+            <li><a href="javascript:void(0)">Penalty Provisions</a></li>
+            <li><a href="javascript:void(0)">Case Repository</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Help &amp; Support</div>
+          <ul class="footer-links">
+            <li><a href="javascript:void(0)">Consumer Helpline: 1915</a></li>
+            <li><a href="javascript:void(0)">WhatsApp: 8800001915</a></li>
+            <li><a href="javascript:void(0)">NCH / INGRAM Portal</a></li>
+            <li><a href="javascript:void(0)">Contact DoCA</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copyright">© 2026 Department of Consumer Affairs, Ministry of Consumer Affairs, Food &amp; Public Distribution, Government of India. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="javascript:void(0)">Privacy Policy</a>
+          <a href="javascript:void(0)">Terms of Use</a>
+          <a href="javascript:void(0)">Accessibility Statement</a>
+          <a href="javascript:void(0)">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="emblem_b64.js"></script>
+  <script src="html2pdf.bundle.min.js"></script>
+  <script type="module" src="app.js"></script>
+
+</body>
 </html>
